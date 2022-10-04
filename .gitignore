@@ -1,0 +1,25 @@
+.Rprofile
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.httr-oauth-salesforcer
+
+renv.lock
+renv/
+
+# private 
+data/
+foto/
+
+.vscode/
+ 
+ 
+# Output files from R CMD build
+/*/*.log
+/*/*.aux
+/*/*.out
+
+*.log
+*.aux
+*.out
