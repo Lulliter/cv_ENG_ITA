@@ -1,8 +1,8 @@
 ---
 name: Luisa M.
 surname: Mimmi
-position: Public Policy & Data Analysis
-address: EU citizen (Italy) | Green card holder
+position: Esperta di Economia e Politiche Pubbliche
+address: Cittadina Italiana | Professionista con P.IVA
 www: lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
@@ -14,8 +14,8 @@ twitter: lulliter
 headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: |-
-  Experienced policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  
-  I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, etc).
+  **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
+  **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
 # aboutme: |-
 #   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
 #     I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. 
@@ -43,44 +43,30 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 #install.packages('BiocManager')
-# if (cond) expr
-if (!require("pacman")) install.packages("pacman")
-p_load('vitae'     # The CV's LaTeX Template
-       ,'tibble'    # Data structure for tribbles
-       ,'dplyr' , 'ggplot2', 'stringr'
-       ,'lubridate'
-       ,'magrittr'  # The Pipe %>%
-       ,'here'      # Relative File Paths
-       ,'readr'     # Data Loading
-       ,'glue'      # String Manipulation
-       ,'rorcid'
-       ,'RefManageR'
-       ,'scholar'
-       , 'emojifont'
-       , 'fontawesome'
-       , 'ggrepel' 
-       ,'kableExtra'
-       ,'huxtable'
-       ,'gridExtra'
-)
-
+#if (!require("pacman")) install.packages("pacman")
 #p_load_gh("rstudio" )
+library('pacman'  )  
+library('vitae'  )  
+library('tibble'    )  
+library('dplyr' )
+# library('ggplot2')
+library('stringr')
+library('lubridate')
+library('magrittr')  
+library('here'  )  
+library('readr' )  
+library('readxl')  
+library('glue'  )  
+library('rorcid')
+library('RefManageR')
+library('scholar')
+# library('emojifont')
+library('fontawesome') 
+# library('ggrepel' ) 
+library('kableExtra') 
+# library('huxtable') 
+# library('gridExtrlibrary')
 
- # MODO ALTERNATIVO -----------------------
-# require(xfun)
-# packages <- c('vitae'     # The CV's LaTeX Template
-#              ,'tibble'    # Data structure for tribbles
-#              ,'dplyr' 
-#              ,'lubridate'
-#              ,'magrittr'  # The Pipe %>%
-#              ,'here'      # Relative File Paths
-#              ,'readr'     # Data Loading
-#              ,'glue'      # String Manipulation
-#              ,'rorcid'
-#              ,'RefManageR'
-#              ,'scholar'
-#              )
-# xfun::pkg_attach2(packages, message = FALSE)
  
 # data input (in "./data/data_Lula.R")   -----------------------
 source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
@@ -97,70 +83,71 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 
 <!-- # Employment history -->
 
-\faIcon{briefcase} Percorso Professionale
+\faIcon{briefcase} Esperienza Professionale
 ============================================
 
-```{r employment, results='asis'}
-# tribble(
-#   ~Years, ~Position, ~Company,
-#   '2018:...', "Research Fellow", "Inter-American Development Bank, (Washington DC)",
-#   '2018:...', "Fundraising Data Analyst (Pro bono)", "New York Encounter, (remote)",
-#   '2009:2018', "Senior M&E Specialist", "World Bank, Sustainable Development VP, (Washington DC)",
-#   '2008' , "Policy Analyst", "Inter-American Development Bank, (Washington DC)",
-#   '2007' , "Summer Intern", "AVSI International (Brazil)",
-#   '2001:2006', "Business Intelligence Analyst", "Value Partners (Italy)",
-#    ) %>%
-#   # arrange(-Years) %>%
-#    #filter(Start > 2000) %>%
-#   # mutate(End = replace_na(End, "")) %>%
-#   # mutate(Years = paste(Start, "--", End, sep = "")) %>%
-#   select(Years, Position, Company ) %>%
-#   detailed_entries(
-#     when = Years, 
-#     what = Position, 
-#     where = Company )
+<!-- #### -  *** fix extra bullet  -->
+<!-- + detail is empty in csv , I reconstructed from det1, det2 adn det3  -->
+<!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
 
+```{r employment, results='asis'}
+# PREP -----------------------------------
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Log","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+work_ita$start_month_ita <- month_ita_3dig[ work_ita$start_month ]
+work_ita$end_month_ita <- if_else ( is.na(work_ita$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(work_ita$end_month) ])
+work_ita$detail =  Map(c, 
+                       ifelse(!is.na(work_ita$description_1), work_ita$description_1, NA),
+                       ifelse(!is.na(work_ita$description_2), work_ita$description_2, NA),
+                       ifelse(!is.na(work_ita$description_3), work_ita$description_3, NA)
+) 
+ 
 
 work_ita %>%
-  mutate(detail = glue::glue("{description_1}, {description_2}, {description_3}",.na = "") ) %>% 
-  
-  vitae::detailed_entries(
+  # fix 
+  # mutate(detail = glue::glue("c(\"{description_1}\", \"{description_2}\", \"{description_3}\")",.na = "") ) %>% 
+   vitae::detailed_entries(
     with =  org , #scambiati x spazio
     what = title,
     why = detail,
-    when = glue::glue("{startMonth} {startYear}-{endMonth} {endYear}",.na = ""),
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
     where = where, #scambiati x spazio
     .protect = TRUE)
-
 ```
 
-\newpage
-
-
-
-<!-- # Education -->
-```{r education}
-# edu <- rorcid::orcid_works("0000-0002-2244-8282")
-# edu$`0000-0002-2244-8282`$`education-summary` %>%
-#   detailed_entries(
-#     what = `role-title`,
-#     when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
-#     with = organization.name,
-#     where = organization.address.city
-#   )
-```
+<!-- \newpage -->
 
 \faIcon{graduation-cap} Istruzione
 ==================================
 <!--  \faIcon{university} -->
 ```{r EDUCATION}
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Log","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+edu_ita$start_month_ita <- month_ita_3dig[ edu_ita$start_month ]
+edu_ita$end_month_ita <- if_else ( is.na(edu_ita$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(edu_ita$end_month) ])
+
+
 edu_ita %>%  
   vitae::detailed_entries(with = inst,
-         where = where,
-         # qui non mi serve la durata --> extract portion before "("
-         what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
-         when = glue::glue("{end_month}-{end_year}" )
-  )  
+                          where = where,
+                          # qui non mi serve la durata --> extract portion before "("
+                          # what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+                          what =  degree ,
+                          when = glue::glue("{end_month_ita} {end_year}" ),
+                          why = if_else(!is.na(thesis), glue::glue("Tesi: {thesis}" ,.na = ""), NULL)
+  )
 ```
 
 
@@ -176,132 +163,11 @@ honors_ita %>%
 
 ```
 
-
-\faIcon{laptop-code} Informatica
-=============================== 
-<!-- \faIcon{file-code} -->
-  
-
-<!-- ```{r sw_opt1} -->
-<!-- # software %>% -->
-<!-- #    vitae::detailed_entries( -->
-<!-- #    what  = skills , -->
-<!-- #     with =  area, -->
-<!-- #     where = detail # -->
-<!-- #   ) -->
-<!-- #   -->
-<!-- software %>% -->
-<!--    vitae::detailed_entries( -->
-<!--    what  = glue::glue("  {area}: [{skills}]") -->
-<!--     #,where = detail # -->
-<!--   ) -->
-
-<!-- # software %>% -->
-<!-- #    vitae::brief_entries( -->
-<!-- #    what  = area , -->
-<!-- #     with =  skills -->
-<!-- #       -->
-<!-- #   ) -->
-<!-- ``` -->
-
-
-```{r  sw_opt2, results='markup'}
-# Lorena Abad, ma non viene !
-# https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
-
-tribble(
-   ~`Statistica / Database`, ~`GIS`, ~`Altro`,
-  "R, RStudio, Stata, SQL, Salesforce, MS Excel",
-  "ArcGIS, QGIS, GeoDa, OpenStreetMap",
-  "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown, MS Office"
-)  %>%
-  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
-  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
-  row_spec(0, bold = T, color = "#009acd") |>
-  row_spec(1, bold = F, color = "#7f7f7f") |>
-  column_spec(column = 1:3, width = '4.75cm')
-```
-
-
-\faIcon{globe} Lingue
-==================================
-
-<!-- ```{r lan_opt1} -->
-<!-- languages %>%  -->
-<!--   vitae::detailed_entries( -->
-<!--     what = glue::glue("{area}: [{skills}]")  -->
-<!--     ) -->
-<!-- ``` -->
-
-```{r lan_opt2, eval=FALSE, include=FALSE, results='markup'}
-# next
-data.frame(
-  Livello = c("Reading", "Writing", "Listening","Speaking"),
-  Italiano = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
-  Inglese = cell_spec(c("C2","C2","C2","C2"), 'latex', color = '#009acd'), 
-  Spagnolo = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#4cb8dc'), 
-  Portoghese = cell_spec(c("B2","A1","B2","B2"), 'latex', color = '#4cb8dc')
-  #Francese = cell_spec(c("A2","A1","A1","A1"), 'latex', color = '#7fcce6') 
-)  %>% 
-  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
-  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
-  footnote(
-    footnote_as_chunk = T,
-    general_title = " ",
-    general = "\\\\tiny Quadro di riferimento Europeo per le lingue: A1/A2: Basic. B1/B2: Independent. C1/C2: Proficient",
-    escape = F
-  )  %>% 
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
-```
-
-```{r lan_opt3, results='markup'}
-data.frame(
-  Livello = c("Level"),
-  Italiano = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
-  Inglese = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
-  Spagnolo = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
-  Portoghese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
-  Francese = cell_spec(c("A1"), 'latex', color = '#7fcce6') 
-)  %>% 
-  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
-  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
-  footnote(
-    footnote_as_chunk = T,
-    general_title = " ",
-    general = "\\\\tiny Quadro di riferimento Europeo per le lingue: A1/A2: Basic. B1/B2: Independent. C1/C2: Proficient",
-    escape = F
-  )  %>% 
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
-```
-
-
-\faIcon{lightbulb} Altre Esperienze Professionali
-===================================== 
-
-```{r}
-# service <- tribble( ~what, ~when, ~with,
-#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
-service_ita %>%
-  vitae::detailed_entries(
-  what = what, 
-  when =  when,
-  why = why  
-  )
-  
-```
-
-<!-- \bigskip -->
-
-
-\newpage
-
-\faIcon*{pencil} CORSI E CERTIFICAZIONI
+\faIcon*{pencil} Formazione Professionale
 ===========================
- 
+
+#### - *** [non tradotti]
+
 ```{r}
 #courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
 
@@ -317,9 +183,33 @@ courses %>%
 ```
 
 
+\faIcon{lightbulb} Altre Esperienze Professionali
+===================================== 
+
+#- *** fix punctuation/ latex
+
+```{r}
+# service <- tribble( ~what, ~when, ~with,
+#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
+service_ita %>%
+  vitae::detailed_entries(
+  what = what, 
+  when =  when,
+  why = why)
+
+ # , .protect = FALSE # allows links in column
+ #  ) # allows links in column
+  
+```
+
+<!-- \bigskip -->
+
+
 
 \faIcon{r-project}  Data Science Projects  
 ===================================== 
+
+#### - *** [non tradotti]
 
 ```{r PROJECTS}
 # ~area,  ~year, ~accomplishment, ~where, ~link,
@@ -351,10 +241,134 @@ projects2 %>%
 
 <!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
 
+<!-- \newpage -->
+
+\faIcon{handshake} Competenze Personali
+==================================
+
+\faIcon{users} Competenze comunicative
+---------------------------
+Esempio:
+▪ possiedo buone competenze comunicative acquisite durante la mia esperienza di direttore vendite
+
+\faIcon{sitemap} Competenze organizzative e gestionali
+---------------------------
+Esempio:
+▪ leadership (attualmente responsabile di un team di 10 persone)
+
+\faIcon{door-open} Competenze professionali
+---------------------------
+Esempio:
+▪ buona dei processi di controllo qualità (attualmente responsabile del controllo qualità)
+
+
+\faIcon{laptop-code} Competenze Informatiche
+=============================== 
+
+<!-- \faIcon{file-code} -->
+<!-- ```{r sw_opt1} -->
+<!-- # software %>% -->
+<!-- #    vitae::detailed_entries( -->
+<!-- #    what  = skills , -->
+<!-- #     with =  area, -->
+<!-- #     where = detail # -->
+<!-- #   ) -->
+<!-- #   -->
+<!-- software %>% -->
+<!--    vitae::detailed_entries( -->
+<!--    what  = glue::glue("  {area}: [{skills}]") -->
+<!--     #,where = detail # -->
+<!--   ) -->
+
+<!-- # software %>% -->
+<!-- #    vitae::brief_entries( -->
+<!-- #    what  = area , -->
+<!-- #     with =  skills -->
+<!-- #       -->
+<!-- #   ) -->
+<!-- ``` -->
+
+
+```{r  sw_opt2, results='markup'}
+# Lorena Abad, ma non viene !
+# https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
+
+tribble(
+   ~`Statistica/Database (Utente avanzato)`, ~`GIS (Utente base)`, ~`Altro (Utente base)`,
+  "R, RStudio, Stata, SQL, Salesforce, MS Excel",
+  "ArcGIS, QGIS, GeoDa, OpenStreetMap",
+  "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown, MS Office"
+)  %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
+  row_spec(0, bold = T, color = "#009acd") |>
+  row_spec(1, bold = F, color = "#7f7f7f") |>
+  column_spec(column = 1:3, width = '4.75cm')
+```
+
+
+\faIcon{globe} Competenze Linguistiche
+==================================
+
+<!-- ```{r lan_opt1} -->
+<!-- languages %>%  -->
+<!--   vitae::detailed_entries( -->
+<!--     what = glue::glue("{area}: [{skills}]")  -->
+<!--     ) -->
+<!-- ``` -->
+
+```{r lan_opt2,  results='markup'}
+# next
+data.frame(
+  Livello = c("Lettura", "Scrittura", "Ascolto","Parlato"),
+  Italiano = cell_spec(c(rep("Madrelingua", 4)), 'latex', color = '#005c7b'), 
+  Inglese = cell_spec(c("C2","C2","C2","C2"), 'latex', color = '#009acd'), 
+  Spagnolo = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#4cb8dc'), 
+  Portoghese = cell_spec(c("B2","A1","B2","B2"), 'latex', color = '#4cb8dc')
+  #Francese = cell_spec(c("A2","A1","A1","A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Quadro comune europeo di riferimento per le lingue: A1/A2:Utente base; B1/B2: Utente autonomo; C1/C2: Utente avanzato",
+    escape = F
+  )  %>% 
+  column_spec(column = 1:6, width = '2.4cm') #|> 
+  # add_header_above(' ', line = F) |>
+  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+```
+
+```{r lan_opt3, eval=FALSE, results='markup'}
+data.frame(
+  Livello = c("Level"),
+  Italiano = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
+  Inglese = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
+  Spagnolo = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
+  Portoghese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
+  Francese = cell_spec(c("A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Quadro comune europeo di riferimento per le lingue: A1/A2:Utente base; B1/B2: Utente autonomo; C1/C2: Utente avanzato",
+    escape = F
+  )  %>% 
+  column_spec(column = 1:6, width = '2.4cm') #|> 
+  # add_header_above(' ', line = F) |>
+  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+```
+
 \newpage
+
 
 \faBook[regular] Pubblicazioni
 ===========================
+
+#### - *** [links outside of page... apa style issues]
 
 \medskip
 
@@ -471,6 +485,8 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 # for (f in files) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
 ```
 
+\newpage
+
 
 \faIcon*{microphone} Presentazioni e Seminari
 ===========================
@@ -486,5 +502,9 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
   arrange(desc(issued))
 
 ```
+
+
+\vspace*{\fill}
+\footnotesize \textcolor{cyan}{Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
 
  

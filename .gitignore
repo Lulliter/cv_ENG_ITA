@@ -19,7 +19,8 @@ foto/
 /*/*.log
 /*/*.aux
 /*/*.out
-
+/*/*.tex
 *.log
 *.aux
 *.out
+*.tex

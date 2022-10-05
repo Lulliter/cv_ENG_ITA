@@ -19,7 +19,7 @@ aboutme: |-
 # aboutme: |-
 #   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
 #     I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. 
-profilepic: ../foto/LulaSalvador2015.jpg
+profilepic: foto/LulaSalvador2015.jpg
 docname: Curriculum Vitae
 csl: apa6-cv.csl # apa-annotated-bibliography.csl
 output:
@@ -42,49 +42,35 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-# if (cond) expr
-if (!require("pacman")) install.packages("pacman")
-p_load('vitae'     # The CV's LaTeX Template
-       ,'tibble'    # Data structure for tribbles
-       ,'dplyr' , 'ggplot2'
-       ,'lubridate'
-       ,'magrittr'  # The Pipe %>%
-       ,'here'      # Relative File Paths
-       ,'readr'     # Data Loading
-       ,'glue'      # String Manipulation
-       ,'rorcid'
-       ,'RefManageR'
-       ,'scholar'
-       , 'emojifont'
-       , 'fontawesome'
-       , 'ggrepel' 
-       ,'kableExtra'
-       ,'huxtable'
-       ,'gridExtra'
-)
+#install.packages('BiocManager')
+#if (!require("pacman")) install.packages("pacman")
+#p_load_gh("rstudio" )
+library('pacman'  )  
+library('vitae'  )  
+library('tibble'    )  
+library('dplyr' )
+# library('ggplot2')
+library('stringr')
+library('lubridate')
+library('magrittr')  
+library('here'  )  
+library('readr' )  
+library('readxl')  
+library('glue'  )  
+library('rorcid')
+library('RefManageR')
+library('scholar')
+# library('emojifont')
+library('fontawesome') 
+# library('ggrepel' ) 
+library('kableExtra') 
+# library('huxtable') 
+# library('gridExtrlibrary')
 
-p_load_gh("rstudio" )
-
- # MODO ALTERNATIVO -----------------------
-# require(xfun)
-# packages <- c('vitae'     # The CV's LaTeX Template
-#              ,'tibble'    # Data structure for tribbles
-#              ,'dplyr' 
-#              ,'lubridate'
-#              ,'magrittr'  # The Pipe %>%
-#              ,'here'      # Relative File Paths
-#              ,'readr'     # Data Loading
-#              ,'glue'      # String Manipulation
-#              ,'rorcid'
-#              ,'RefManageR'
-#              ,'scholar'
-#              )
-# xfun::pkg_attach2(packages, message = FALSE)
  
 # data input (in "./data/data_Lula.R")   -----------------------
-source(file = here::here("data", "data_Lula.R")) # "data.r"
+source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 
- 
 # rorcid_app <- httr::oauth_app(
 #   appname = "rorcid",
 #   key = "APP-7E02XXWNQBFNMG1B",
@@ -99,33 +85,22 @@ source(file = here::here("data", "data_Lula.R")) # "data.r"
 \faIcon{briefcase} Professional Experience
 ============================================
 
-```{r employment, results='asis'}
-# tribble(
-#   ~Years, ~Position, ~Company,
-#   '2018:...', "Research Fellow", "Inter-American Development Bank, (Washington DC)",
-#   '2018:...', "Fundraising Data Analyst (Pro bono)", "New York Encounter, (remote)",
-#   '2009:2018', "Senior M&E Specialist", "World Bank, Sustainable Development VP, (Washington DC)",
-#   '2008' , "Policy Analyst", "Inter-American Development Bank, (Washington DC)",
-#   '2007' , "Summer Intern", "AVSI International (Brazil)",
-#   '2001:2006', "Business Intelligence Analyst", "Value Partners (Italy)",
-#    ) %>%
-#   # arrange(-Years) %>%
-#    #filter(Start > 2000) %>%
-#   # mutate(End = replace_na(End, "")) %>%
-#   # mutate(Years = paste(Start, "--", End, sep = "")) %>%
-#   select(Years, Position, Company ) %>%
-#   detailed_entries(
-#     when = Years, 
-#     what = Position, 
-#     where = Company )
+#### -  *** fix detail bullets / latex
 
+```{r employment, results='asis'}
+## ----month in word 3 dig 
+work$start_month_en <-  month.abb[work$start_month]
+work$end_month_en <-  if_else(is.na(work$end_month) ,
+                                    "Present", month.abb[work$end_month])
 
 work %>%
+   # fix 
+  mutate(detail = glue::glue("{description_1}, {description_2}, {description_3}",.na = "") ) %>% 
   vitae::detailed_entries(
-    with =  unit , #scambiati x spazio
+    with =  org , #scambiati x spazio
     what = title,
     why = detail,
-    when = glue::glue("{startMonth} {startYear}-{endMonth} {endYear}",.na = ""),
+    when = glue::glue("{start_month_en} {start_year}-{end_month_en} {end_year}",.na = ""),
     where = where, #scambiati x spazio
     .protect = TRUE)
 
@@ -133,8 +108,7 @@ work %>%
 
 \newpage
 
-
-
+ 
 <!-- # Education -->
 ```{r education}
 # edu <- rorcid::orcid_works("0000-0002-2244-8282")
@@ -152,12 +126,12 @@ work %>%
 <!--  \faIcon{university} -->
 ```{r EDUCATION}
 edu %>% 
-  vitae::detailed_entries( with = inst,
-    what = degree,
-    why = detail,
-    when =  ifelse(is.na(startYear),
-                   endYear, glue::glue("{startYear}-{endYear}",.na = "")),
-    where = where)
+  vitae::detailed_entries(with = inst,
+         where = where,
+         # qui non mi serve la durata --> extract portion before "("
+         what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+         when = glue::glue("{end_month} {end_year}" )
+  )  
 ```
 
 
@@ -166,22 +140,12 @@ edu %>%
 ```{r}
 # ~area, ~accomplishment, ~year, ~where, [~detail],
 honors %>%
-  vitae::detailed_entries(
-    # with = area,
-    # what = accomplishment,
-    what = where   ,
-    when = year,
-    with =glue::glue("{area} -- {accomplishment}",.na = "" )
-  )
-# # try to make it less pompous
-# honors %>% 
-#   vitae::brief_entries(
-#     #with = area,
-#     what = glue::glue("{area} - {accomplishment}",.na = "" )  ,
-#     #why = detail,
-#     when = where ,
-#     with = year
-#   )
+   vitae::detailed_entries(
+    what = sponsor   ,
+    when = glue::glue("{start}/{end}",.na = "" )  ,
+    with = title
+     )
+ 
 ```
 
 
@@ -241,7 +205,7 @@ tribble(
 <!--     ) -->
 <!-- ``` -->
 
-```{r lan_opt2, eval=FALSE, include=FALSE, results='markup'}
+```{r lan_opt2, results='markup'}
 data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
   Italian = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
@@ -263,7 +227,7 @@ data.frame(
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
-```{r lan_opt3, results='markup'}
+```{r lan_opt3, eval=FALSE, results='markup'}
 data.frame(
   Skill = c("Level"),
   Italian = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
@@ -288,6 +252,8 @@ data.frame(
 
 \faIcon{lightbulb}  Other Professional Service
 ===================================== 
+
+#- *** fix punctuation/ latex
 
 ```{r}
 # service <- tribble( ~what, ~when, ~with,
@@ -362,6 +328,9 @@ projects2 %>%
 
 \faBook[regular] Publications
 ===========================
+
+#### - *** [links outside of page... apa style issues]
+
 
 \medskip
 
