@@ -1,21 +1,28 @@
+---
+---
+---
+
 # Purpose
 
 In this this R project I my CV/resume following Mitchell O'Hara-Wild's [R package `vitae`](https://github.com/mitchelloharawild/vitae) ("awwsome"" template define in LATEX in `awesome-cv.cls` )
 
 I have 4 versions:
 
-+ Long, in Italian
-+ Long, in English
-+ Short, in Italian
-+ Short, in English 
-
+-   Long, in Italian
+-   Long, in English
+-   Short, in Italian (in progress)
+-   Short, in English (in progress)
 
 ## NOTES / TO DOs
- 
- -   a major "gotcha" was the possibility to insert Publications & Talks exploiting my **Zotero** collections in the `....bib` format that can be entered directly via the function `vitae::bibliography_entries`. All the other information is saved in `./data/*data_Lula.R*.csv`
-    -   (\*) When exporting from Zotero better to select BetterBibLaTeX
- - tricky! see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare 
- 
+
+-   :white_check_mark: A major "gotcha" was the possibility to insert Publications & Talks exploiting my **Zotero** collections in the `....bib` format that can be entered directly via the function `vitae::bibliography_entries`.
+    -   (\*) when exporting from Zotero better to select BetterBibLaTeX
+-   :white_check_mark: All the other information is saved in `./data/*.csv`which get loaded via `data/cv_data_ENG_ITA.R`
+    -   :warning: see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare
+    -   :ballot_box_with_check: must revise and write instructions to be consistent
+-   :ballot_box_with_check: Add Competenze personali in ITA version
+-   :question: New version of `vitae` does not print footer anymore
+-   :question: English work wrong ... redo 
 
 ## Acknowledgements
 
@@ -28,4 +35,5 @@ I have 4 versions:
       \RequirePackage{fontawesome5}
       \RequirePackage[default,opentype]{sourcesanspro}
 ```
+
 -   Future attempt could be this [Github action to develop resume!](https://github.com/rahulrai-in/csf-resume-ops/blob/5b12e8adc82a96e738f4ea1a89a180006234c2f8/README.md)

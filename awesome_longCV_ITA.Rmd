@@ -95,13 +95,15 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 #months vector assuming 1st month is Jan.
 month_ita_3dig <- c("Gen","Feb","Mar",
               "Apr","Mag","Giu",
-              "Log","Ago","Set",
+              "Lug","Ago","Set",
               "Ott","Nov","Dic")
 #add abbreviated month name
 work_ita$start_month_ita <- month_ita_3dig[ work_ita$start_month ]
 work_ita$end_month_ita <- if_else ( is.na(work_ita$end_month) ,
                                     "Oggi",
                                     month_ita_3dig[as.numeric(work_ita$end_month) ])
+
+# concatenate in bullets 
 work_ita$detail =  Map(c, 
                        ifelse(!is.na(work_ita$description_1), work_ita$description_1, NA),
                        ifelse(!is.na(work_ita$description_2), work_ita$description_2, NA),
@@ -151,7 +153,7 @@ edu_ita %>%
 ```
 
 
-\faIcon{medal} Borse di Studio e Fondi per la Ricerca
+\faIcon{medal} Riconoscimenti e Premi
 =============================== 
 ```{r}
 honors_ita %>%
@@ -166,12 +168,9 @@ honors_ita %>%
 \faIcon*{pencil} Formazione Professionale
 ===========================
 
-#### - *** [non tradotti]
-
 ```{r}
 #courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
-
-courses %>%
+courses_ita %>%
   vitae::detailed_entries(
     #why = area ,
     what = accomplishment,
@@ -186,7 +185,7 @@ courses %>%
 \faIcon{lightbulb} Altre Esperienze Professionali
 ===================================== 
 
-#- *** fix punctuation/ latex
+<!-- #- *** fix punctuation/ latex -->
 
 ```{r}
 # service <- tribble( ~what, ~when, ~with,
@@ -206,10 +205,10 @@ service_ita %>%
 
 
 
-\faIcon{r-project}  Data Science Projects  
+\faIcon{r-project}  Progetti di Data Science  
 ===================================== 
 
-#### - *** [non tradotti]
+<!-- #### - *** [non tradotti] -->
 
 ```{r PROJECTS}
 # ~area,  ~year, ~accomplishment, ~where, ~link,
@@ -225,7 +224,7 @@ service_ita %>%
 
 
 #projects2 <- tibble::tribble(~name,  ~year, ~explain,
-projects2 %>%
+projects2_ita %>%
   vitae::detailed_entries(
     what = name,
     when = year,
@@ -245,6 +244,9 @@ projects2 %>%
 
 \faIcon{handshake} Competenze Personali
 ==================================
+
+#### - *** COMPLETE!
+
 
 \faIcon{users} Competenze comunicative
 ---------------------------
@@ -368,9 +370,10 @@ data.frame(
 \faBook[regular] Pubblicazioni
 ===========================
 
-#### - *** [links outside of page... apa style issues]
+<!-- #### - *** [links outside of page... apa style issues] -->
 
 \medskip
+
 
 [_Vedere dettagli sul profilo [**Google Scholar**](https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)_]
 

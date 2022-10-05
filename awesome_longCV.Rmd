@@ -87,15 +87,21 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 
 #### -  *** fix detail bullets / latex
 
-```{r employment, results='asis'}
+```{r employment, eval=FALSE, include=FALSE, results='asis'}
 ## ----month in word 3 dig 
 work$start_month_en <-  month.abb[work$start_month]
 work$end_month_en <-  if_else(is.na(work$end_month) ,
                                     "Present", month.abb[work$end_month])
+# concatenate in bullets 
+work$detail =  Map(c, 
+                   ifelse(!is.na(work$description_1), work$description_1, NA),
+                   ifelse(!is.na(work$description_2), work$description_2, NA),
+                   ifelse(!is.na(work$description_3), work$description_3, NA)
+) 
 
 work %>%
    # fix 
-  mutate(detail = glue::glue("{description_1}, {description_2}, {description_3}",.na = "") ) %>% 
+  #mutate(detail = glue::glue("{description_1}, {description_2}, {description_3}",.na = "") ) %>% 
   vitae::detailed_entries(
     with =  org , #scambiati x spazio
     what = title,
