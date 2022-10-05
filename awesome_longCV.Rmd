@@ -85,9 +85,9 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 \faIcon{briefcase} Professional Experience
 ============================================
 
-#### -  *** fix detail bullets / latex
+<!-- #### -  *** fix detail bullets / latex -->
 
-```{r employment, eval=FALSE, include=FALSE, results='asis'}
+```{r employment, results='asis'}
 ## ----month in word 3 dig 
 work$start_month_en <-  month.abb[work$start_month]
 work$end_month_en <-  if_else(is.na(work$end_month) ,
@@ -110,6 +110,7 @@ work %>%
     where = where, #scambiati x spazio
     .protect = TRUE)
 
+ 
 ```
 
 \newpage
@@ -135,7 +136,8 @@ edu %>%
   vitae::detailed_entries(with = inst,
          where = where,
          # qui non mi serve la durata --> extract portion before "("
-         what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+         # what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+         what =  degree ,
          when = glue::glue("{end_month} {end_year}" )
   )  
 ```
@@ -188,10 +190,10 @@ honors %>%
 # https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
 
 tribble(
-   ~`Statistics / Databases`, ~`GIS`, ~`Other`,
+   ~`Statistics/Databases`, ~`GIS`, ~`Other`,
   "R, RStudio, Stata, SQL, Salesforce, MS Excel",
   "ArcGIS, QGIS, GeoDa, OpenStreetMap",
-  "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown"
+  "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown, MS Office"
 )  %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
@@ -258,8 +260,6 @@ data.frame(
 
 \faIcon{lightbulb}  Other Professional Service
 ===================================== 
-
-#- *** fix punctuation/ latex
 
 ```{r}
 # service <- tribble( ~what, ~when, ~with,
@@ -335,17 +335,11 @@ projects2 %>%
 \faBook[regular] Publications
 ===========================
 
-#### - *** [links outside of page... apa style issues]
-
-
 \medskip
+<!-- #### - *** [links outside of page... apa style issues] -->
 
-[_See detailed list on my [**Google Scholar Profile**](https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)_]
-
-\bigskip
 <!-- \medskip -->
-
-\faBookmark[regular] Peer-Reviewed Articles
+\faIcon{paperclip} Peer-Reviewed Articles
 ---------------------------
 
 ```{r PUBgooglesch}
@@ -395,6 +389,13 @@ projects2 %>%
   filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
  
 ```
+
+\medskip
+
+
+\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[See detailed list on my \textbf{Google Scholar Profile}]}} 
+
+
 
 \bigskip
 
