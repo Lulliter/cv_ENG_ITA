@@ -25,18 +25,20 @@ params:
     choices: ["Esperta di Politiche Pubbliche ed Europrogettazione","Esperta di Economia e Politiche Pubbliche", "Policy & Data Analyst"]
   aboutme:
       label: Short Bio
-      value: "\n\n**PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  \n\n**OBIETTIVI**: Cerco opportunità per applicare le mie competenze analitiche e di _project management_ all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
+      value: >-
+       **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  <br><br>**OBIETTIVI**: Cerco opportunità per applicare le mie competenze analitiche e di _project management_ all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).
       input: select
-      choices: ["\n\n**PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute). \n\n**OBIETTIVI**: Cerco opportunità per applicare le mie competenze analitiche e di _project management_ all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).",  
-      "\n\n**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi fiduciari EU in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. \n\n**OBIETTIVI**: Applicare le mie competenze nella valuatazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale ed Europeo.",
-      "\n\n**PROFILO**: Economista di formazione con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. \n\n**OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
+      choices: ["**PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute). <br><br>**OBIETTIVI**: Cerco opportunità per applicare le mie competenze analitiche e di _project management_ all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).",  
+      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi fiduciari EU in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. <br><br>**OBIETTIVI**: Applicare le mie competenze nella valuatazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale ed Europeo.",
+      "**PROFILO**: Economista di formazione con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. <br><br>**OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
 # aboutme: |-
 #   **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
 #   **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
 # aboutme: |-
 #   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
 #     I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. 
-profilepic: foto/LulaSalvador2015.jpg
+
+#profilepic: foto/LulaSalvador2015.jpg
 docname: Curriculum Vitae
 csl: apa6-cv.csl # apa-annotated-bibliography.csl
 output:
@@ -57,6 +59,7 @@ position: "`r params$position`" # must come AFTER the params declaration Esperta
 aboutme: "`r params$aboutme`" # must come AFTER the params declaration Esperta di Economia e Politiche Pubbliche
 ---
 
+<!-- PARAMETRIZED WITH 3 PROFILES  -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
@@ -104,10 +107,8 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 
 \faIcon{briefcase} Esperienza Professionale
 ============================================
-
-<!-- #### -  *** fix extra bullet  -->
-<!-- + detail is empty in csv , I reconstructed from det1, det2 adn det3  -->
-<!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
+ 
+ <!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
 
 ```{r employment, results='asis'}
 # PREP -----------------------------------
@@ -157,7 +158,7 @@ work_ita %>%
     .protect = TRUE)
 ```
 
-<!-- \newpage -->
+\newpage
 
 \faIcon{graduation-cap} Istruzione
 ==================================
@@ -355,7 +356,7 @@ tribble(
 <!--     ) -->
 <!-- ``` -->
 
-```{r lan_opt2, eval=FALSE,results='markup'}
+```{r lan_opt2, eval=FALSE, results='markup'}
 # next
 data.frame(
   Livello = c("Lettura", "Scrittura", "Ascolto","Parlato"),
@@ -399,9 +400,7 @@ data.frame(
   )  %>% 
   row_spec(0, bold = T, color = "#009acd") %>% 
   column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+  column_spec(column = 1:6, width = '2.4cm')
 ```
 
 \faBook[regular] Pubblicazioni
@@ -448,8 +447,7 @@ data.frame(
 
 \textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere lista sul profilo \textbf{Google Scholar}]}} 
 
-
-\bigskip
+\medskip
 
 \faIcon{rss} Media Divulgativi
 ---------------------------
@@ -459,45 +457,37 @@ data.frame(
 <!-- [Vedere dettagli su Sito Web Personale](https://lulliter.com/publications.html#misc.-divulgative-pieces)] -->
 
 <!-- MUST escaped hash symbols, #, in URLs. !!!!!!!!!!!!!!!-->
-\textcolor{magenta}{\href{https://lulliter.com/publications.html\#misc.-divulgative-pieces}{[Vedere lista sul \textbf{sito web personale}]}} 
+\textcolor{cyan}{\href{https://lulliter.com/publications.html\#misc.-divulgative-pieces}{[Vedere lista sul \textbf{sito web personale}]}} 
 
  
 ```{r BLOGzotero, eval=FALSE}
 # # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
 # author, title, type, issued, journal
- 
-#print<-  
+
 vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
                              # ,sorting="ydnt"
                               ) %>% 
      arrange(desc(issued)) %>% 
   select(-genre) %>% 
   filter( stringr::str_detect(type ,"webpage" )  )
- 
 
-# --------- names(print)
-#   "URL" "author"  "genre" "id" "issued" "keyword" "language"  "publisher"  "title"            "title-short"  "type" "DOI" "ISSN" "accessed" "container-title"  "issue""page" "volume"           "abstract"  "collection-title" "number" "publisher-place"  "annote"  
-
-# --------- print$type
-# "webpage" "webpage" "report" "webpage" "webpage" "article-journal" "report"         
-#  [8] "report"          "report"          "article-journal" "report"          "webpage"     
 ```
 
 
-<!-- \faIcon*{microphone} Presentazioni e Seminari -->
-<!-- =========================== -->
+\faIcon*{microphone} Presentazioni e Seminari
+===========================
 
-<!-- ```{r TALKzotero} -->
-<!-- # # from Synched Lula-MyTalks.bib (in Zotero) -->
-<!-- # author, title, type, issued, journal -->
-<!-- vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib") -->
-<!--                             # ,sorting="ydnt" -->
-<!-- ) %>%  -->
-<!--   select(-genre) %>%   -->
-<!--   arrange(desc(issued)) -->
+```{r TALKzotero, eval=FALSE}
+# # from Synched Lula-MyTalks.bib (in Zotero)
+# author, title, type, issued, journal
+vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
+                            # ,sorting="ydnt"
+) %>%
+  select(-genre) %>%
+  arrange(desc(issued))
+```
 
-<!-- ``` -->
-
+\textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista sul \textbf{sito web personale}]}} 
 
 \vspace*{\fill}
 \footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
@@ -532,34 +522,3 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 
 ```
 
-<!-- SAVING LATEST MANUALLY IN JOB FOLDER -->
- 
-```{r copyTOjobDIR, include=FALSE}
-# outdated because new website takes from here on its own
-here::here()
-
-# ObjectiFY SubDirs	
-from.dir <- here::here()
-fs::path_abs(from.dir)
-
- # sporca ma OK!
-to.dir <- "/Users/luisamimmi/Documents/04_JOB/04_1_JobAppli" # "/Users/luisamimmi/GoogleDrive/source/content/cv",
-fs::path_abs(to.dir)
-
-# List Files RES 
-files_RES <- list.files(path = from.dir, 
-						  pattern = glob2rx("*awesome_RES*pdf") , #c ('^awesome_RES', '\\.pdf$'),
-						  full.names = TRUE, # If TRUE, the directory path is prepended to the file names 
-						  recursive = FALSE) # Should the listing recurse into directories?
-
-# List Files LONG CV  	
-files_CV <- list.files(path = from.dir, 
-						  pattern = glob2rx("*awesome_long*pdf") , #c ('^awesome_RES', '\\.pdf$'),
-						  full.names = TRUE, # If TRUE, the directory path is prepended to the file names 
-						  recursive = FALSE) # Should the listing recurse into directories?
-
-# function to MOVE
-for (f in files_RES) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
-for (f in files_CV) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
-
-```

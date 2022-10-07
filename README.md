@@ -10,19 +10,23 @@ I have 4 versions:
 
 -   Long, in Italian
 -   Long, in English
--   Short, in Italian (in progress)
--   Short, in English (in progress)
+-   Short, in Italian
+-   Short, in English
 
-## NOTES / TO DOs
+## NOTES
 
 -   :white_check_mark: A major "gotcha" was the possibility to insert Publications & Talks exploiting my **Zotero** collections in the `....bib` format that can be entered directly via the function `vitae::bibliography_entries`.
     -   (\*) when exporting from Zotero better to select BetterBibLaTeX
--   :white_check_mark: All the other information is saved in `./data/*.csv`which get loaded via `data/cv_data_ENG_ITA.R`
-    -   :warning: see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare
-    -   :ballot_box_with_check: must revise and write instructions to be consistent
+-   :white_check_mark: Most other information is saved in `./data/*.csv`which get loaded via `data/cv_data_ENG_ITA.R`, except for **Comepetences** (Personal, Software, Language) which are defined in `*.Rmd` files
+    -   :warning: see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare (
+    -   :ballot_box_with_check: fixing `.*csv` files directly from Excel or R will have different implications on `""` rendering via latex
+
+## TO DOs
+
 -   :ballot_box_with_check: Add Competenze personali in ITA version
--   :question: New version of `vitae` does not print footer anymore
--   :question: English work wrong ... redo 
+-   :ballot_box_with_check: revise and write instructions to be consistent adding rows to `.*csv` files in terms of quotes/links etc
+-   :question: Current version of `vitae` does not print footer anymore
+-   :question: `apa6-cv.csl` seems OK except hyperlink exceed page width.... must check other formattings
 
 ## Acknowledgements
 
