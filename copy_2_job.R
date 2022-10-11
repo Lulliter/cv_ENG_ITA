@@ -26,5 +26,6 @@ files_CV <- list.files(path = from.dir,
                        recursive = FALSE) # Should the listing recurse into directories?
 
 # function to MOVE
-for (f in files_RES) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
-for (f in files_CV) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
+for (f in files_RES) file.copy(from = f, to = to.dir,	 overwrite = T) # , copy.date = T)
+for (f in files_CV) file.copy(from = f, to = to.dir,	 overwrite = T) # ,, copy.date = T)
+ 

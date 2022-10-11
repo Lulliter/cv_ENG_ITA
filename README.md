@@ -23,9 +23,10 @@ I have 4 versions:
 
 ## TO DOs
 
--   :ballot_box_with_check: Add Competenze personali in ITA version
 -   :ballot_box_with_check: revise and write instructions to be consistent adding rows to `.*csv` files in terms of quotes/links etc
+
 -   :question: Current version of `vitae` does not print footer anymore
+
 -   :question: `apa6-cv.csl` seems OK except hyperlink exceed page width.... must check other formattings
 
 ## Acknowledgements

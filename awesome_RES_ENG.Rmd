@@ -2,7 +2,7 @@
 name: Luisa M.
 surname: Mimmi
 #position: Public Policy & Data Analysis
-address: EU citizen (Italy) | Green card holder
+address: EU citizen (Italy) | USA green card holder
 www: lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
@@ -10,30 +10,30 @@ linkedin: luisa-m-mimmi
 researchgate: Luisa-Mimmi
 #orcid: 0000-0002-2244-8282
 github: lulliter
-twitter: lulliter
+#twitter: lulliter
 headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 params:
   cv_code: 
     label: cv_code
-    value: euro
+    value: pol
     input: select
-    choices: ["euro","pol","data"]  
+    choices: ["pol", "euro","data"]  
   position:
     label: position
-    value: "Expert of Public Policy and EU funds planning"
+    value: "Economist and Policy Analyst"
     input: select
-    choices: ["Expert of Public Policy and EU funds planning","Economist and Policy Analyst", "Public Policy & Data Analysis"]
+    choices: ["Economist and Policy Analyst", "Expert of Public Policy and EU funds planning","Public Policy & Data Analysis"]
   aboutme:
       label: Short Bio
-      value: "**PROFILE**: Experienced policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). <br><br> **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, etc)."
+      value: "**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). <br><br> **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of policies for sustainable development within the national & EU context."
       input: select
-      choices: ["**PROFILE**: Experienced policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). <br><br> **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, etc).",  
-      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi fiduciari EU in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. <br><br> **OBIETTIVI**: Applicare le mie competenze nella valuatazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale ed Europeo.",
-      "**PROFILO**: I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health). <br><br> **GOAL**: I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. ."]
+      choices: ["**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). <br><br> **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of policies for sustainable development within the national & EU context.",  
+      "**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). <br><br> **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, Horizon, etc).",  
+     "**PROFILO**: I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health). <br><br> **GOAL**: I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues."]
 
 # aboutme: |-
-#   **PROFILE**: Experienced policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  
+#   **PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  
 #   **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, etc).
 # aboutme: |-
 #   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
@@ -106,7 +106,7 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
 
 <!-- # Employment history -->
 
-# \faIcon{briefcase} Professional Experience
+# \faIcon{briefcase} Work Experience
 
  <!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
 
@@ -126,6 +126,8 @@ work$end_month_en <-  if_else(is.na(work$end_month) ,
 # 2/2 concatenate in bullets [EXCEPT NA] ---------
 # Create a master list, a list of lists [ie cols]
 pmapinputs <- list(work$description_1, work$description_2, work$description_3)
+# just 2 bullets for SHORT
+pmapinputs2 <- list(work$description_1, work$description_2)
 
 # create var -----------
 work <- work %>% 
@@ -133,7 +135,13 @@ work <- work %>%
     pmapinputs, # a master list of all the lists we want to iterate over
     # dplyr::across(c("description_1","description_2","description_3")),
     ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA2 =  purrr::pmap(
+    pmapinputs2, # a master list of all the lists we want to iterate over
+    # dplyr::across(c("description_1","description_2","description_3")),
+    ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
     )
+    
     )
 
 # work$detail_noNA  
@@ -144,17 +152,22 @@ work %>%
   vitae::detailed_entries(
     with =  org , #scambiati x spazio
     what = title,
-    why = detail_noNA,
+    why = detail_noNA2, #detail_noNA,
     when = glue::glue("{start_month_en} {start_year}-{end_month_en} {end_year}",.na = ""),
     where = where, #scambiati x spazio
     .protect = TRUE)
 
- 
 ```
+
+# \faIcon{handshake} Professional Skills
+ 
+ •	<!-- \faIcon{calculator}--> Exceptional problem solving, critical thinking, and **data analysis skills**, showcased in international development programs    
+ •	<!-- \faIcon{sitemap}--> Demonstrated drive and resourcefulness in **leadership roles** for complex projects with multiple stakeholders      
+ •	<!-- \faIcon{users}--> Effective interpersonal and **communication skills**, proven by record of multilingual publications and public speaking  
 
 \newpage
 
-# \faIcon{graduation-cap} Istruzione
+# \faIcon{graduation-cap} Education
 
 <!--  \faIcon{university} -->
 
@@ -349,7 +362,7 @@ data.frame(
 
 ```{r lan_opt3, results='markup'}
 data.frame(
-  Skill = c( "(Write and Speak)"), # no"  & " will mess Latex
+  Skill = c( "(Written and Verbal)"), # no"  & " will mess Latex
   Italian = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
   English = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
   Spanish = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 

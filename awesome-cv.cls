@@ -1,6 +1,5 @@
 % !!!!!! LULA'S MADE SOME MDIFICATIONS TO FONT SIZES AND SPACES !!!!!
 
-
 %% Start of file `awesome-cv.cls'.
 % Awesome CV Class File
 %
