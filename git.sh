@@ -17,7 +17,7 @@ git add  awesome_longCV_ENG.pdf
 git commit -m "fixed NA bullets 💯 + added awesome_longCV.Rmd" -m "https://stackoverflow.com/questions/73966739/how-to-join-3-columns-strings-into-a-one-column-list-of-strings-in-r-exclu"
 
 # commit changes 
-git commit -m "small opds + added awesome_RES_ENG.Rmd"  
+git commit -m "small upds + added competencies"  
 
 # push 
 git push origin master

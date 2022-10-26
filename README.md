@@ -20,6 +20,7 @@ I have 4 versions:
 -   :white_check_mark: Most other information is saved in `./data/*.csv`which get loaded via `data/cv_data_ENG_ITA.R`, except for **Comepetences** (Personal, Software, Language) which are defined in `*.Rmd` files
     -   :warning: see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare (
     -   :ballot_box_with_check: fixing `.*csv` files directly from Excel or R will have different implications on `""` rendering via latex
+-   :white_check_mark: The best way to deal with "ANONIMIZATION" (i.e. Eutalia) is directly on `PDFreader` by redacting the PDF
 
 ## TO DOs
 
@@ -27,7 +28,7 @@ I have 4 versions:
 
 -   :question: Current version of `vitae` does not print footer anymore
 
--   :question: `apa6-cv.csl` seems OK except hyperlink exceed page width.... must check other formattings
+-   :question: `apa6-cv.csl` seems OK except hyperlink exceed page width.... must check other formatting
 
 ## Acknowledgements
 

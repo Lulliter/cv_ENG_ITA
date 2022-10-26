@@ -172,7 +172,7 @@ work_ita %>%
 
 ▪<!-- \faIcon{calculator}--> Spiccata attitudine al **pensiero critico e all'analisi dei dati**, perfezionata lungo il percorso professionale  
 ▪<!-- \faIcon{sitemap}--> Affidabilità e capacità organizzativa sviluppate attraverso **leadership** in progetti complessi e internazionali  
-▪<!-- \faIcon{users}--> Capacità di **comunicazione** (scritta e orale) comprovate da pubblicazioni e presentazioni - Inglese e Spagnolo
+▪<!-- \faIcon{users}--> Capacità di **comunicazione** (scritta e orale) comprovata da pubblicazioni e presentazioni - Inglese e Spagnolo
 
 
 <!-- \faIcon{calculator} Competenze comunicative -->

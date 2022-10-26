@@ -2,7 +2,7 @@
 name: Luisa M.
 surname: Mimmi
 position: Esperta di Economia e Politiche Pubbliche
-address: Cittadina Italiana | Professionista con P.IVA
+address: Nata il 26/11/1975 | Cittadina Italiana | Professionista con P.IVA
 www: lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
@@ -114,11 +114,17 @@ work_ita$end_month_ita <- if_else ( is.na(work_ita$end_month) ,
 # 2/2 concatenate in bullets [EXCEPT NA] ---------
 # Create a master list, a list of lists [ie cols]
 pmapinputs <- list(work_ita$description_1, work_ita$description_2, work_ita$description_3)
+pmapinputs2 <- list(work_ita$description_1, work_ita$description_2)
 
 # create var -----------
 work_ita <- work_ita %>% 
   mutate(detail_noNA =  purrr::pmap(
     pmapinputs, # a master list of all the lists we want to iterate over
+    # dplyr::across(c("description_1","description_2","description_3")),
+    ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA2 =  purrr::pmap(
+    pmapinputs2, # a master list of all the lists we want to iterate over
     # dplyr::across(c("description_1","description_2","description_3")),
     ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
     )
@@ -133,13 +139,13 @@ work_ita %>%
    vitae::detailed_entries(
     with =  org , #scambiati x spazio
     what = title,
-    why = detail_noNA,
+    why = detail_noNA2, #detail_noNA,
     when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
     where = where, #scambiati x spazio
     .protect = TRUE)
 ```
 
-<!-- \newpage -->
+\newpage
 
 \faIcon{graduation-cap} Istruzione
 ==================================
@@ -168,116 +174,26 @@ edu_ita %>%
   )
 ```
 
-
-\faIcon{medal} Riconoscimenti e Premi
-=============================== 
-```{r}
-honors_ita %>%
-  vitae::detailed_entries(
-    what = sponsor   ,
-    when = glue::glue("{start}/{end}",.na = "" )  ,
-    with = title
-     )
-
-```
-
-\faIcon*{pencil} Formazione Professionale
-===========================
-
-```{r}
-#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
-courses_ita %>%
-  vitae::detailed_entries(
-    #why = area ,
-    what = accomplishment,
-    when = year ,
-    why = detail, # certificate 
-    .protect = FALSE # allows links in column
-  )
-    
-```
-
-
-\faIcon{lightbulb} Altre Esperienze Professionali
-===================================== 
-
-<!-- #- *** fix punctuation/ latex -->
-
-```{r}
-# service <- tribble( ~what, ~when, ~with,
-#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
-service_ita %>%
-  vitae::detailed_entries(
-  what = what, 
-  when =  when,
-  why = why)
-
- # , .protect = FALSE # allows links in column
- #  ) # allows links in column
-  
-```
-
-<!-- \bigskip -->
-
-
-
-\faIcon{r-project}  Progetti di Data Science  
-===================================== 
-
-<!-- #### - *** [non tradotti] -->
-
-```{r PROJECTS}
-# ~area,  ~year, ~accomplishment, ~where, ~link,
-# projects %>%
-# detailed_entries(
-#     with = area,
-#     when =  year,
-#     what = accomplishment, 
-#     # where = where,
-#         why = link,
-#         .protect = FALSE, # to turn link in LATEX 
-#   )
-
-
-#projects2 <- tibble::tribble(~name,  ~year, ~explain,
-projects2_ita %>%
-  vitae::detailed_entries(
-    what = name,
-    when = year,
-    #with = NA_character_,
-    why = explain,
-    #where = NA_character_,
-    .protect = FALSE
-  )
-
-```
-
-<!-- \endfirstpage -->
-
-<!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
-
-<!-- \newpage -->
-
 \faIcon{handshake} Competenze Personali
 ==================================
+<!-- #### - *** COMPLETE! -->
+\faIcon{calculator} **Competenze Analitiche**: Eccellenti capacità di pensiero critico e creativo, applicata alla soluzione di problemi complessi di carattere quantitativo, perfezionate nell'ambito di programmi internazionali di sviluppo economico  
+\faIcon{sitemap} **Competenze Organizzative**: Affidabilità, intraprendenza, e capacità di lavorare in squadra dimostrata in ruoli di _leadership_ ricoperti nella conduzione di progetti di ricerca e assistenza tecnica con diversi _stakeholders_  
+\faIcon{users} **Competenze di Comunicazione**: Efficaci capacità interpersonali e comunicative, comprovate da proficue collaborazioni professionali e svariate pubblicazioni e presentazioni  
 
-#### - *** COMPLETE!
+<!-- \faIcon{calculator} Competenze Analitiche -->
+<!-- --------------------------- -->
+<!-- • Eccellenti capacità di pensiero critico, "out-of-the-box", applicata nella soluzione di problemi complessi di carattere quantitativo acquisite nell'ambito di programmi di sviluppo economico -->
 
+<!-- \faIcon{sitemap} Competenze Organizzative -->
+<!-- --------------------------- -->
+<!-- •	Dimostrata creatività, intraprendenza e capacità di lavorare in team nella conduzione di progetti con vari stake-holders -->
 
-\faIcon{users} Competenze comunicative
----------------------------
-Esempio:
-▪ possiedo buone competenze comunicative acquisite durante la mia esperienza di direttore vendite
+<!-- \faIcon{users} Communication Skills -->
+<!-- --------------------------- -->
+<!-- •	Efficaci capacità interpersonali e comunicative, comprovate da passate collaborazioni e svariate pubblicazioni e presentazioni   -->
+ 
 
-\faIcon{sitemap} Competenze organizzative e gestionali
----------------------------
-Esempio:
-▪ leadership (attualmente responsabile di un team di 10 persone)
-
-\faIcon{door-open} Competenze professionali
----------------------------
-Esempio:
-▪ buona dei processi di controllo qualità (attualmente responsabile del controllo qualità)
 
 
 \faIcon{laptop-code} Competenze Informatiche
@@ -385,21 +301,105 @@ data.frame(
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
+
+
+\faIcon{medal} Riconoscimenti e Premi
+=============================== 
+```{r}
+honors_ita %>%
+  vitae::detailed_entries(
+    what = sponsor   ,
+    when = glue::glue("{start}/{end}",.na = "" )  ,
+    with = title
+     )
+
+```
+
 \newpage
+
+\faIcon*{pencil} Formazione Professionale
+===========================
+
+```{r}
+#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
+courses_ita %>%
+  vitae::detailed_entries(
+    #why = area ,
+    what = accomplishment,
+    when = year ,
+    why = detail, # certificate 
+    .protect = FALSE # allows links in column
+  )
+    
+```
+
+
+\faIcon{lightbulb} Altre Esperienze Professionali
+===================================== 
+
+<!-- #- *** fix punctuation/ latex -->
+
+```{r}
+# service <- tribble( ~what, ~when, ~with,
+#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
+service_ita %>%
+  vitae::detailed_entries(
+  what = what, 
+  when =  when,
+  why = why)
+
+ # , .protect = FALSE # allows links in column
+ #  ) # allows links in column
+  
+```
+
+<!-- \bigskip -->
+
+
+
+\faIcon{r-project}  Progetti di Data Science  
+===================================== 
+
+<!-- #### - *** [non tradotti] -->
+
+```{r PROJECTS}
+# ~area,  ~year, ~accomplishment, ~where, ~link,
+# projects %>%
+# detailed_entries(
+#     with = area,
+#     when =  year,
+#     what = accomplishment, 
+#     # where = where,
+#         why = link,
+#         .protect = FALSE, # to turn link in LATEX 
+#   )
+
+
+#projects2 <- tibble::tribble(~name,  ~year, ~explain,
+projects2_ita %>%
+  vitae::detailed_entries(
+    what = name,
+    when = year,
+    #with = NA_character_,
+    why = explain,
+    #where = NA_character_,
+    .protect = FALSE
+  )
+
+```
+
+<!-- \endfirstpage -->
+
+<!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
+
+\newpage
+
 
 
 \faBook[regular] Pubblicazioni
 ===========================
 
 <!-- #### - *** [links outside of page... apa style issues] -->
-
-\medskip
-
-
-\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere dettagli sul profilo \textbf{Google Scholar}]}} 
-
-\bigskip
-<!-- \medskip -->
 
 \faIcon{paperclip} Articoli su Riviste Scientifiche
 ---------------------------
@@ -451,6 +451,10 @@ data.frame(
   filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
  
 ```
+
+\medskip
+
+\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere dettagli sul profilo \textbf{Google Scholar}]}} 
 
 \bigskip
 
@@ -508,8 +512,6 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 # # function to MOVE
 # for (f in files) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
 ```
-
-\newpage
 
 \faIcon*{microphone} Presentazioni e Seminari
 ===========================

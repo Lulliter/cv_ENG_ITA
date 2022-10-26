@@ -2,7 +2,7 @@
 name: Luisa M.
 surname: Mimmi
 position: Public Policy & Data Analysis
-address: EU citizen (Italy) | Green card holder
+address: Born 26/11/1975 | EU citizen (Italy) | Green card holder
 www: lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
@@ -157,98 +157,12 @@ edu %>%
   )  
 ```
 
-# \faIcon{medal} Honors & Awards
-
-```{r}
-# ~area, ~accomplishment, ~year, ~where, [~detail],
-honors %>%
-   vitae::detailed_entries(
-    what = sponsor   ,
-    when = glue::glue("{start}/{end}",.na = "" )  ,
-    with = title
-     )
- 
-```
-
-
-# \faIcon*{pencil} Professional Development
-
-```{r}
-#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
-
-courses %>%
-  vitae::detailed_entries(
-    #why = area ,
-    what = accomplishment,
-    when = year ,
-    why = detail, # certificate 
-    .protect = FALSE # allows links in column
-  )
-    
-```
-
-# \faIcon{lightbulb} Other Professional Service
-
-```{r}
-# service <- tribble( ~what, ~when, ~with,
-#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
-service %>%
-  vitae::detailed_entries(
-  what = what, 
-  when =  when,
-  why = why  
-  )
-  
-```
-
-<!-- \bigskip -->
-
-
-# \faIcon{r-project} Data Science Projects
-
-```{r PROJECTS}
-# #~area,  ~year, ~accomplishment, ~where, ~link,
-# projects %>%
-#   detailed_entries(
-#     with = area,
-#     when = year,
-#     what = accomplishment,
-#     # where = where,
-#     why = link,
-#     .protect = FALSE, # to turn link in LATEX
-#   )
-
-# --------- better/smaller with links 
-#projects2 <- tibble::tribble(~name,  ~year, ~explain,
-projects2 %>%
-  vitae::detailed_entries(
-    what = name,
-    when = year,
-    #with = NA_character_,
-    why = explain,
-    #where = NA_character_,
-    .protect = FALSE
-  )
-
-```
-
-
-\newpage
-
 \faIcon{handshake} Professional Skills
 ==================================
 
-\faIcon{calculator} Analytical Skills
----------------------------
-• Outstanding critical, 'out-of-the-box' thinking, problem solving and data analysis skills, acquired serving international development programs  
-
-\faIcon{sitemap} Organization Skills
----------------------------
-•	Demonstrated creativity, resourcefulness and teamwork skills in leading complex and multi-partner projects    
-
-\faIcon{users} Communication Skills
----------------------------
-•	Effective interpersonal and communication skills, proven by record of multilingual publications and public speaking
+\faIcon{calculator} **Analytical Skills**: Outstanding critical, 'out-of-the-box' thinking, problem solving and data analysis skills, acquired serving international development programs  
+\faIcon{sitemap} **Organization Skills**: Demonstrated creativity, resourcefulness and teamwork skills in leading complex and multi-partner projects    
+\faIcon{users} **Communication Skills**: Effective interpersonal and communication skills, proven by record of multilingual publications and public speaking  
 
 
 # \faIcon{laptop-code} Software
@@ -350,7 +264,82 @@ data.frame(
 ```
 
 
-<!-- \endfirstpage -->
+# \faIcon{medal} Honors & Awards
+
+```{r}
+# ~area, ~accomplishment, ~year, ~where, [~detail],
+honors %>%
+   vitae::detailed_entries(
+    what = sponsor   ,
+    when = glue::glue("{start}/{end}",.na = "" )  ,
+    with = title
+     )
+ 
+```
+
+\newpage
+
+# \faIcon*{pencil} Professional Development
+
+```{r}
+#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
+
+courses %>%
+  vitae::detailed_entries(
+    #why = area ,
+    what = accomplishment,
+    when = year ,
+    why = detail, # certificate 
+    .protect = FALSE # allows links in column
+  )
+    
+```
+
+# \faIcon{lightbulb} Other Professional Service
+
+```{r}
+# service <- tribble( ~what, ~when, ~with,
+#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
+service %>%
+  vitae::detailed_entries(
+  what = what, 
+  when =  when,
+  why = why  
+  )
+  
+```
+
+<!-- \bigskip -->
+
+
+# \faIcon{r-project} Data Science Projects
+
+```{r PROJECTS}
+# #~area,  ~year, ~accomplishment, ~where, ~link,
+# projects %>%
+#   detailed_entries(
+#     with = area,
+#     when = year,
+#     what = accomplishment,
+#     # where = where,
+#     why = link,
+#     .protect = FALSE, # to turn link in LATEX
+#   )
+
+# --------- better/smaller with links 
+#projects2 <- tibble::tribble(~name,  ~year, ~explain,
+projects2 %>%
+  vitae::detailed_entries(
+    what = name,
+    when = year,
+    #with = NA_character_,
+    why = explain,
+    #where = NA_character_,
+    .protect = FALSE
+  )
+
+```
+
 
 <!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
 
@@ -417,7 +406,7 @@ data.frame(
 
 \medskip
 
-## \faIcon{rss} Other Media
+## \faIcon{rss} Other Divulgative Media
 
 <!-- \faIcon{file-signature} -->
 
