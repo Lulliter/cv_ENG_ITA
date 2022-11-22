@@ -80,8 +80,11 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \defaultfontfeatures{Extension = .otf}
+% \RequirePackage{fontawesome}
 % Add fontawesome5 package 
 \RequirePackage{fontawesome5}
+% Add support of academia icons
+\usepackage{academicons}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -95,7 +98,8 @@
   pdfsubject={},
   pdfkeywords={}
 }
-
+% LULA'S Needed to SET COLORS OF TABLE LINES (LANGUAGE ETC)
+\RequirePackage{colortbl} 
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -111,10 +115,10 @@
 %% Page Layout
 % Configure page margins with geometry
 \geometry{left=2.0cm,
-  top=2cm, % top=1.5cm,
+  top=1.5cm, % top=1.5cm,
   % headheight = 24pt,
   right=2.0cm, 
-  bottom=2.0cm, 
+  bottom=1.5cm, % bottom=2.0cm,
   footskip=.5cm} 
 
 %% Header & Footer
@@ -200,13 +204,13 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{graytext} #1}} % 32
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{text} #1}}% 32
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{graytext} #1}} % {32pt}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{text} #1}}% {32pt}
 % \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{18pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{8pt}{1em}\headerfont\color{text} #1}} % 6.7
-\newcommand*{\headerquotestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\itshape\color{darktext} #1}} % 9
+\newcommand*{\headersocialstyle}[1]{{\fontsize{8pt}{1em}\headerfont\color{text} #1}} % {6.8pt}
+\newcommand*{\headerquotestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\itshape\color{darktext} #1}} % {9pt}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{awesome} #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
@@ -578,6 +582,7 @@
 
 \renewcommand{\section}[1]{%
 	\vspace{\acvSectionTopSkip}
+	\vspace{-2mm} % [LULA] ADDED 2 REDUCE SPACES https://github.com/posquit0/Awesome-CV/issues/79
 	\sectionstyle{#1}
 	\phantomsection
 	\color{gray}\vhrulefill{0.9pt}
@@ -587,7 +592,7 @@
 % Usage: \cvsubsection{<subsection-title>}
 \renewcommand{\subsection}[1]{%
 	\vspace{\acvSectionContentTopSkip}
-	\vspace{-3mm}
+	\vspace{-3mm}  
 	\subsectionstyle{#1}
 	\phantomsection
 }
@@ -595,7 +600,7 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-2mm} % [LULA] {-3mm} 2 increase SPACES
   \paragraphstyle
 }{%
   \par

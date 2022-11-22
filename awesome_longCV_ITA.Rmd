@@ -27,13 +27,13 @@ output:
   keep_tex: false
   latex_engine: "xelatex" # maybe redund bc in awsomecv is already this 
 always_allow_html: yes
-header-includes:
+header-includes:        # from Lore Abad
   \usepackage{float}
   \usepackage{multicol}
-  \usepackage{colortbl}
-  \arrayrulecolor{white}
-  \usepackage{hhline}
-  \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{hhline}
+  # \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{colortbl}
+  # \arrayrulecolor{white}
 editor_options: 
   chunk_output_type: console
 ---
@@ -235,11 +235,21 @@ tribble(
             "ArcGIS, QGIS, GeoDa, OpenStreetMap",
                 "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown,"
 )  %>%
-  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex",
+        #bottomrule = '',
+        #toprule = '',
+        #midrule = ''
+        )  %>%
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
   row_spec(0, bold = T, color = "#009acd") %>%
   row_spec(1, bold = F, italic = T, color = "#7f7f7f") %>%
-  column_spec(column = 1:4, width = '4 cm')
+  column_spec(column = 1:4, width = '4 cm')  %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
 ```
 
 \faIcon{globe} Competenze Linguistiche
@@ -272,9 +282,14 @@ data.frame(
   )  %>% 
   row_spec(0, bold = T, color = "#009acd") %>% 
   column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+  column_spec(column = 1:6, width = '2.4cm')  %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+
 ```
 
 ```{r lan_opt3, eval=FALSE, results='markup'}
@@ -396,7 +411,7 @@ projects2_ita %>%
 
 
 
-\faBook[regular] Pubblicazioni
+\faBook[solid] Pubblicazioni
 ===========================
 
 <!-- #### - *** [links outside of page... apa style issues] -->
@@ -435,7 +450,7 @@ projects2_ita %>%
 \bigskip
 <!-- \medskip -->
 
-\faBookOpen[regular] Report Tecnici
+\faBookOpen[solid] Report Tecnici
 ---------------------------
 
 ```{r TECzotero}

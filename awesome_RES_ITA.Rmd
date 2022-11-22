@@ -1,7 +1,7 @@
 ---
 name: Luisa M.
 surname: Mimmi
-address: Nata il 26/11/1975  |  Cittadina Italiana  |  Professionista con P.IVA 
+address: Nata il 26/11/1975 | Cittadina Italiana  | Professionista con P.IVA
 www: lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
@@ -26,12 +26,13 @@ params:
   aboutme:
       label: Short Bio
       value: |-
-       **PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  
-       **OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
+        **PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  
+        **OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
       input: select
       choices: ["**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. <br><br>**OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
-      "**PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute). <br><br>**OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della e valutazione/implementazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).",  
-      "**PROFILO**: Economista di formazione con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. <br><br>**OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
+      "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br>**OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nella valutazione e implementazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).",  
+      "**PROFILO**: Economista con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. <br><br>**OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
+
 # aboutme: |-
 #   **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
 #   **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
@@ -47,13 +48,13 @@ output:
   keep_tex: false
   latex_engine: "xelatex" # maybe redund bc in awsomecv is already this 
 always_allow_html: yes
-header-includes:
+header-includes:        # from Lore Abad
   \usepackage{float}
   \usepackage{multicol}
-  \usepackage{colortbl}
-  \arrayrulecolor{white}
-  \usepackage{hhline}
-  \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{hhline}
+  # \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{colortbl}
+  # \arrayrulecolor{white}
 editor_options: 
   chunk_output_type: console
 position: "`r params$position`" # must come AFTER the params declaration Esperta di Economia e Politiche Pubbliche
@@ -170,8 +171,8 @@ work_ita %>%
 \faIcon{handshake} Competenze Personali
 ==================================
 
-▪<!-- \faIcon{calculator}--> Spiccata attitudine al **pensiero critico e all'analisi dei dati**, perfezionata lungo il percorso professionale  
-▪<!-- \faIcon{sitemap}--> Affidabilità e capacità organizzativa sviluppate attraverso **leadership** in progetti complessi e internazionali  
+▪<!-- \faIcon{calculator}--> Spiccata attitudine al **pensiero logico-critico e all'analisi dei dati**, perfezionata lungo il percorso professionale  
+▪<!-- \faIcon{sitemap}--> Affidabilità e capacità organizzativa, sviluppate attraverso **leadership** in progetti complessi e internazionali  
 ▪<!-- \faIcon{users}--> Capacità di **comunicazione** (scritta e orale) comprovata da pubblicazioni e presentazioni - Inglese e Spagnolo
 
 
@@ -201,8 +202,6 @@ tibble::tribble(
 
 ```
 
- 
-\newpage
 
 \faIcon{graduation-cap} Istruzione
 ==================================
@@ -365,7 +364,13 @@ tribble(
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
   row_spec(0, bold = T, color = "#009acd") %>%
   row_spec(1, bold = F, italic = T, color = "#7f7f7f") %>%
-  column_spec(column = 1:4, width = '4 cm')
+  column_spec(column = 1:4, width = '4 cm')  %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
 ```
 
 
@@ -399,15 +404,19 @@ data.frame(
   )  %>% 
   row_spec(0, bold = T, color = "#009acd") %>% 
   column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
 ```
 
 ```{r lan_opt3, results='markup'}
 data.frame(
   Livello =  c("(Scritto e Orale)" ),
-  Italiano = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
+  Italiano = cell_spec( c("Madrelingua" ), 'latex', color = '#005c7b'), 
   Inglese = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
   Spagnolo = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
   Portoghese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
@@ -423,10 +432,16 @@ data.frame(
   )  %>% 
   row_spec(0, bold = T, color = "#009acd") %>% 
   column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
-  column_spec(column = 1:6, width = '2.4cm')
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
 ```
 
-\faBook[regular] Pubblicazioni
+\faBook[solid] Pubblicazioni
 ===========================
 
 <!-- #### - *** [links outside of page... apa style issues] -->
@@ -510,8 +525,6 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
 
 <!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista sul \textbf{sito web personale}]}}  -->
 
-\vspace*{\fill}
-\footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
 
 <!-- [FAIL} RENDERING DIFFERENT OUTPUTS BASED ON PARAMETERS   -->
 ```{r OUT_PARAM, include=FALSE}
@@ -543,3 +556,5 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
 
 ```
 
+\vspace*{\fill}
+\footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
