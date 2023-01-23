@@ -1,0 +1,496 @@
+---
+name: Luisa M.
+surname: Mimmi
+position: Public Policy & Data Analysis
+address: Born 26/11/1975 | EU citizen (Italy) | Green card holder
+www: lulliter.com
+phone: +39 348 9528360 
+email: lmm76@georgetown.edu
+linkedin: luisa-m-mimmi
+researchgate: Luisa-Mimmi
+#orcid: 0000-0002-2244-8282
+github: lulliter
+twitter: lulliter
+headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: |-
+  **PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  
+  **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, Horizon, etc).
+# aboutme: |-
+profilepic: foto/LulaSalvador2015.jpg
+docname: Curriculum Vitae
+csl: apa6-cv.csl # apa-annotated-bibliography.csl
+output:
+  vitae::awesomecv: 
+  keep_tex: true
+  latex_engine: "xelatex" # maybe redund bc in awsomecv is already this 
+always_allow_html: yes
+header-includes:        # from Lore Abad
+  \usepackage{float}
+  \usepackage{multicol}
+  # \usepackage{hhline}
+  # \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{colortbl}
+  # \arrayrulecolor{white}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+#install.packages('BiocManager')
+#if (!require("pacman")) install.packages("pacman")
+#p_load_gh("rstudio" )
+#library('pacman'  ) 
+
+#remotes::install_github("mitchelloharawild/vitae") ON 21 nov 2022
+library('vitae'  )  
+
+library('tibble'    )  
+library('dplyr' )
+# library('ggplot2')
+library('stringr')
+library('lubridate')
+library('magrittr')  
+library('here'  )  
+library('readr' )  
+library('readxl')  
+library('glue'  )  
+library('rorcid')
+library('RefManageR')
+library('scholar')
+# library('emojifont')
+library('fontawesome') 
+# library('ggrepel' ) 
+library('kableExtra') 
+# library('huxtable') 
+# library('gridExtrlibrary')
+
+ 
+# data input (in "./data/data_Lula.R")   -----------------------
+source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
+
+# rorcid_app <- httr::oauth_app(
+#   appname = "rorcid",
+#   key = "APP-7E02XXWNQBFNMG1B",
+#   secret = "74c15780-e323-48a0-9296-ecceaf46e447"
+# )
+
+# ORCID_TOKEN <- Sys.getenv("ORCID_TOKEN") 
+```
+
+<!-- # Employment history -->
+
+# \faIcon{briefcase} Professional Experience
+
+<!-- #### -  *** fix detail bullets / latex -->
+
+```{r employment, results='asis'}
+## ----month in word 3 dig 
+work$start_month_en <-  month.abb[work$start_month]
+work$end_month_en <-  if_else(is.na(work$end_month) ,
+                                    "Present", month.abb[work$end_month])
+# # # 1/2 concatenate in bullets --------------
+# work$detail =  Map(c, 
+#                    ifelse(!is.na(work$description_1), work$description_1, NA),
+#                    ifelse(!is.na(work$description_2), work$description_2, NA),
+#                    ifelse(!is.na(work$description_3), work$description_3, NA)
+# ) 
+# 
+
+# 2/2 concatenate in bullets [EXCEPT NA] ---------
+# Create a master list, a list of lists [ie cols]
+pmapinputs <- list(work$description_1, work$description_2, work$description_3)
+
+# create var -----------
+work <- work %>% 
+  mutate(detail_noNA =  purrr::pmap(
+    pmapinputs, # a master list of all the lists we want to iterate over
+    # dplyr::across(c("description_1","description_2","description_3")),
+    ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    )
+    )
+
+# work$detail_noNA  
+
+work %>%
+   # fix 
+  #mutate(detail = glue::glue("{description_1}, {description_2}, {description_3}",.na = "") ) %>% 
+  vitae::detailed_entries(
+    with =  org , #scambiati x spazio
+    what = title,
+    why = detail_noNA,
+    when = glue::glue("{start_month_en} {start_year}-{end_month_en} {end_year}",.na = ""),
+    where = where, #scambiati x spazio
+    .protect = TRUE)
+
+ 
+```
+
+\newpage
+
+<!-- # Education -->
+
+```{r education}
+# edu <- rorcid::orcid_works("0000-0002-2244-8282")
+# edu$`0000-0002-2244-8282`$`education-summary` %>%
+#   detailed_entries(
+#     what = `role-title`,
+#     when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
+#     with = organization.name,
+#     where = organization.address.city
+#   )
+```
+
+# \faIcon{graduation-cap} Education
+
+<!--  \faIcon{university} -->
+
+```{r EDUCATION}
+edu %>% 
+  vitae::detailed_entries(with = inst,
+         where = where,
+         # qui non mi serve la durata --> extract portion before "("
+         # what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+         what =  degree ,
+         when = glue::glue("{end_month} {end_year}" )
+  )  
+```
+
+\faIcon{handshake} Professional Skills
+==================================
+
+\faIcon{calculator} **Analytical Skills**: Outstanding critical, 'out-of-the-box' thinking, problem solving and data analysis skills, acquired serving international development programs  
+\faIcon{sitemap} **Organization Skills**: Demonstrated creativity, resourcefulness and teamwork skills in leading complex and multi-partner projects    
+\faIcon{users} **Communication Skills**: Effective interpersonal and communication skills, proven by record of multilingual publications and public speaking  
+
+
+# \faIcon{laptop-code} Software
+
+<!-- \faIcon{file-code} -->
+<!-- ```{r sw_opt1} -->
+<!-- # software %>% -->
+<!-- #    vitae::detailed_entries( -->
+<!-- #    what  = skills , -->
+<!-- #     with =  area, -->
+<!-- #     where = detail # -->
+<!-- #   ) -->
+<!-- #   -->
+
+<!-- software %>% -->
+<!--    vitae::detailed_entries( -->
+<!--    what  = glue::glue("  {area}: [{skills}]") -->
+<!--     #,where = detail # -->
+<!--   ) -->
+<!-- # software %>% -->
+<!-- #    vitae::brief_entries( -->
+<!-- #    what  = area , -->
+<!-- #     with =  skills -->
+<!-- #       -->
+<!-- #   ) -->
+<!-- ``` -->
+
+```{r  sw_opt2, results='markup'}
+# Lorena Abad, ma non viene !
+# https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
+
+tribble(
+  ~`Office Suite`, ~`Statistics/Databases`, ~`GIS`, ~`Other`,
+  "(Expert)", "(Expert)",  "(Basic)",  "(Basic)",
+ "MS Office, iWork Suite, Google Suite, LibreOffice",    
+   "R, RStudio, Stata, SQL, Salesforce, MS Excel",
+      "ArcGIS, QGIS, GeoDa, OpenStreetMap",
+        "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown"
+)  %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
+  row_spec(0, bold = T, color = "#009acd") %>%
+  row_spec(1, bold = F, italic = T, color = "#7f7f7f") %>%
+  column_spec(column = 1:4, width = '4 cm')  %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+ 
+```
+
+# \faIcon{globe} Languages
+
+<!-- ```{r lan_opt1} -->
+<!-- languages %>%  -->
+<!--   vitae::detailed_entries( -->
+<!--     what = glue::glue("{area}: [{skills}]")  -->
+<!--     ) -->
+<!-- ``` -->
+
+```{r lan_opt2, results='markup'}
+data.frame(
+  Skill = c("Reading", "Writing", "Listening","Speaking"),
+  Italian = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
+  English = cell_spec(c("C2","C2","C2","C2"), 'latex', color = '#009acd'), 
+  Spanish = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#4cb8dc'), 
+  Portuguese = cell_spec(c("B2","A1","B2","B2"), 'latex', color = '#4cb8dc')
+  #French = cell_spec(c("A2","A1","A1","A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = F
+  )  %>% 
+  row_spec(0, bold = T, color = "#009acd") %>% 
+  column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+```
+
+```{r lan_opt3, eval=FALSE, results='markup'}
+data.frame(
+  Skill = c( "(Written and Verbal)"), # no"  & " will mess Latex
+  Italian = cell_spec( c("Native" ), 'latex', color = '#005c7b'), 
+  English = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
+  Spanish = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
+  Portuguese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
+  French = cell_spec(c("A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = F
+  )  %>% 
+  row_spec(0, bold = T, color = "#009acd") %>% 
+  column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+```
+
+
+# \faIcon{medal} Honors & Awards
+
+```{r}
+# ~area, ~accomplishment, ~year, ~where, [~detail],
+honors %>%
+   vitae::detailed_entries(
+    what = sponsor   ,
+    when = glue::glue("{start}/{end}",.na = "" )  ,
+    with = title
+     )
+ 
+```
+
+\newpage
+
+# \faIcon*{pencil} Professional Development
+
+```{r}
+#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
+
+courses %>%
+  vitae::detailed_entries(
+    #why = area ,
+    what = accomplishment,
+    when = year ,
+    why = detail, # certificate 
+    .protect = FALSE # allows links in column
+  )
+    
+```
+
+# \faIcon{lightbulb} Other Professional Service
+
+```{r}
+# service <- tribble( ~what, ~when, ~with,
+#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
+service %>%
+  vitae::detailed_entries(
+  what = what, 
+  when =  when,
+  why = why  
+  )
+  
+```
+
+<!-- \bigskip -->
+
+
+# \faIcon{r-project} Data Science Projects
+
+```{r PROJECTS}
+# #~area,  ~year, ~accomplishment, ~where, ~link,
+# projects %>%
+#   detailed_entries(
+#     with = area,
+#     when = year,
+#     what = accomplishment,
+#     # where = where,
+#     why = link,
+#     .protect = FALSE, # to turn link in LATEX
+#   )
+
+# --------- better/smaller with links 
+#projects2 <- tibble::tribble(~name,  ~year, ~explain,
+projects2 %>%
+  vitae::detailed_entries(
+    what = name,
+    when = year,
+    #with = NA_character_,
+    why = explain,
+    #where = NA_character_,
+    .protect = FALSE
+  )
+
+```
+
+
+<!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
+
+\newpage
+
+# \faBook[solid] Publications
+
+<!-- \medskip -->
+
+<!-- #### - *** [links outside of page... apa style issues] -->
+
+## \faIcon{paperclip} Peer-Reviewed Articles
+
+```{r PUBgooglesch}
+# # from Google Scholar
+# publicationsGSL  %>%
+#   vitae::detailed_entries(
+#     what = title,
+#     when = year,
+#     with = author,
+#     where = journal #,
+#     #why = glue::glue("citations: {cites}")
+#   )
+#     
+```
+
+```{r PUBzotero}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+ 
+ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+  filter(genre == "Peer-reviewed" ) %>% 
+  select(-genre) %>% 
+  arrange(desc(issued)) %>% 
+  filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
+ 
+```
+
+<!-- \bigskip -->
+
+\medskip
+
+## \faBookOpen[solid] Technical Reports
+
+```{r TECzotero}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+ 
+ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+  filter(genre != "Peer-reviewed" ) %>% 
+  select(-genre) %>% 
+  arrange(desc(issued)) %>% 
+  filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
+ 
+```
+
+\medskip
+
+\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[See detailed publications list on my \textbf{Google Scholar Profile}]}}
+
+\medskip
+
+## \faIcon{rss} Other Divulgative Media
+
+<!-- \faIcon{file-signature} -->
+
+```{r BLOGzotero}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+ 
+#print<-  
+vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+     arrange(desc(issued)) %>% 
+  select(-genre) %>% 
+  filter( stringr::str_detect(type ,"webpage" )  )
+ 
+
+# --------- names(print)
+#   "URL" "author"  "genre" "id" "issued" "keyword" "language"  "publisher"  "title"            "title-short"  "type" "DOI" "ISSN" "accessed" "container-title"  "issue""page" "volume"           "abstract"  "collection-title" "number" "publisher-place"  "annote"  
+
+# --------- print$type
+# "webpage" "webpage" "report" "webpage" "webpage" "article-journal" "report"         
+#  [8] "report"          "report"          "article-journal" "report"          "webpage"     
+```
+
+```{r copyTOCVDIR, message=FALSE, warning=FALSE, include=FALSE}
+# here::here()
+# 
+# # ObjectiFY SubDirs	
+# from.dir <- "./content/cv/cv_making/resume_twentysecond"
+# fs::path_abs(from.dir)
+# 
+# to.dir   <- "./content/cv"
+# fs::path_abs(to.dir)
+# 
+# # List Files 
+# files <- list.files(path = from.dir, 
+# 						  pattern='\\.pdf$', # an optional regular expression. (ends with
+# 						  full.names = TRUE, # If TRUE, the directory path is prepended to the file names 
+# 						  recursive = FALSE) # Should the listing recurse into directories?
+# 	
+# # all_munge <- list.files(path = "./03_Munge/", pattern = '\\.R$' , 
+# #                         all.files = FALSE,  # def (= only visible)
+# #                         full.names = FALSE, # def (= no dir name prepended)
+# #                         recursive = FALSE,  # def  (= no inside sub-dir )
+# #                         ignore.case = TRUE, #    (= pattern-matching be case-insensitive)
+# #                         include.dirs = FALSE, # def (subdirectory names NOT be included in recursive listings)
+# #                         no.. = FALSE) # def (both "." and ".." be excluded also from non-recursive listings)
+# class(files) 
+# 
+# # function to MOVE
+# for (f in files) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
+```
+
+# \faIcon*{microphone} Talks & Lectures
+
+<!-- \faIcon*{calendar} Talks  -->
+
+```{r TALKzotero}
+# # from Synched Lula-MyTalks.bib (in Zotero)
+# author, title, type, issued, journal
+ 
+  vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+  select(-genre) %>%  
+  arrange(desc(issued))
+
+```
