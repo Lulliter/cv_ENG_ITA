@@ -361,10 +361,10 @@ package <code>vitae</code></a> (“awwsome”” template define in LATEX in
 <code>awesome-cv.cls</code> )</p>
 <p>I have 4 versions:</p>
 <ul>
-<li>Long, in Italian</li>
-<li>Long, in English</li>
-<li>Short, in Italian</li>
-<li>Short, in English</li>
+<li>Long, in Italian 🇮🇹</li>
+<li>Long, in English 🇺🇸</li>
+<li>Short, in Italian 🇮🇹</li>
+<li>Short, in English 🇺🇸</li>
 </ul>
 <div id="notes" class="section level2">
 <h2>NOTES</h2>
@@ -404,8 +404,9 @@ PDF</li>
 <li><p>:ballot_box_with_check: revise and write instructions to be
 consistent adding rows to <code>.*csv</code> files in terms of
 quotes/links etc</p></li>
-<li><p>~~~:ballot_box_with_check: Current version of <code>vitae</code>
-does not print footer anymore…fixed by dev version ~~~</p></li>
+<li><p><del>:ballot_box_with_check: Current version of
+<code>vitae</code> does not print footer anymore…fixed by dev
+version</del></p></li>
 <li><p>:question: <code>apa6-cv.csl</code> seems OK except hyperlink
 exceed page width…. must check other formatting</p></li>
 </ul>
@@ -414,25 +415,26 @@ exceed page width…. must check other formatting</p></li>
 <h2>RECURRENT FIXES</h2>
 <ul>
 <li><p>:ballot_box_with_check: The <code>vitae</code> pckg relies on
-LaTeX “if you&#39;re encountering issues, please check that LaTeX is
+LaTeX “if you’re encountering issues, please check that LaTeX is
 installed. The <a href="https://github.com/rstudio/tinytex">tinytex
 package</a> makes it easy to setup LaTeX within R:</p>
-<pre><code>install.packages(&#39;tinytex&#39;)
-tinytex::install_tinytex()</code></pre></li>
-<li><p>See <a href="https://yihui.org/tinytex/r/#debugging" class="uri">https://yihui.org/tinytex/r/#debugging</a> for debugging
-tips.</p></li>
-<li><p>Check LaTeX packgs installed ( or not installed)</p></li>
-</ul>
-<pre><code>tinytex::tl_pkgs(only_installed = T)
+<pre class="r"><code>    install.packages(&#39;tinytex&#39;)
+    tinytex::install_tinytex()
+    ```
+-   See &lt;https://yihui.org/tinytex/r/#debugging&gt; for debugging tips.
+-   Check LaTeX packgs installed ( or not installed)
+``` r
+tinytex::tl_pkgs(only_installed = T)
 tinytex::check_installed(&#39;xcolor&#39;) #TRUE
 tinytex::parse_packages(&#39;awesome_longCV_ENG.log&#39;)</code></pre>
 <ul>
 <li>Find the root directory of the installation v</li>
 </ul>
-<pre><code>tinytex::tinytex_root()
+<pre class="r"><code>tinytex::tinytex_root()
 [1] &quot;/Users/luisamimmi/Library/TinyTeX&quot;</code></pre>
 <ul>
 <li>Change PDF engine Rstudio –&gt; Preferences –&gt; Sweave</li>
+</ul></li>
 </ul>
 </div>
 <div id="acknowledgements" class="section level2">

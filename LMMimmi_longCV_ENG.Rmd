@@ -15,9 +15,9 @@ headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: |-
   **PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  
-  **GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, Horizon, etc).
+  **GOAL**: I am currently pursuing opportunities to apply my policy analysis and research project management skills towards the implementation and evaluation of policies for sustainable economic development within the national & EU context.
 # aboutme: |-
-profilepic: foto/LulaSalvador2015.jpg
+#profilepic: foto/LulaSalvador2015.jpg
 docname: Curriculum Vitae
 csl: apa6-cv.csl # apa-annotated-bibliography.csl
 output:
@@ -158,14 +158,16 @@ edu %>%
   )  
 ```
 
-\faIcon{handshake} Professional Skills
+\medskip
+
+\faIcon{clipboard-list} Professional Skills
 ==================================
 
 \faIcon{calculator} **Analytical Skills**: Outstanding critical, 'out-of-the-box' thinking, problem solving and data analysis skills, acquired serving international development programs  
 \faIcon{sitemap} **Organization Skills**: Demonstrated creativity, resourcefulness and teamwork skills in leading complex and multi-partner projects    
 \faIcon{users} **Communication Skills**: Effective interpersonal and communication skills, proven by record of multilingual publications and public speaking  
 
-
+\medskip
 # \faIcon{laptop-code} Software
 
 <!-- \faIcon{file-code} -->
@@ -217,6 +219,7 @@ tribble(
  
 ```
 
+\medskip
 # \faIcon{globe} Languages
 
 <!-- ```{r lan_opt1} -->
@@ -282,7 +285,7 @@ data.frame(
   add_header_above(line = F) 
 ```
 
-
+\medskip
 # \faIcon{medal} Honors & Awards
 
 ```{r}
@@ -314,6 +317,7 @@ courses %>%
     
 ```
 
+\medskip
 # \faIcon{lightbulb} Other Professional Service
 
 ```{r}
@@ -330,7 +334,7 @@ service %>%
 
 <!-- \bigskip -->
 
-
+\medskip
 # \faIcon{r-project} Data Science Projects
 
 ```{r PROJECTS}
@@ -365,9 +369,6 @@ projects2 %>%
 \newpage
 
 # \faBook[solid] Publications
-
-<!-- \medskip -->
-
 <!-- #### - *** [links outside of page... apa style issues] -->
 
 ## \faIcon{paperclip} Peer-Reviewed Articles
@@ -421,7 +422,7 @@ projects2 %>%
 
 \medskip
 
-\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[See detailed publications list on my \textbf{Google Scholar Profile}]}}
+<!-- \textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[See detailed publications list on my \textbf{Google Scholar Profile}]}} -->
 
 \medskip
 
@@ -479,8 +480,10 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 # for (f in files) file.copy(from = f, to = to.dir,	 overwrite = T, copy.date = T)
 ```
 
-# \faIcon*{microphone} Talks & Lectures
+\newpage
 
+
+# \faIcon*{microphone} Talks & Lectures
 <!-- \faIcon*{calendar} Talks  -->
 
 ```{r TALKzotero}
@@ -494,3 +497,34 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
   arrange(desc(issued))
 
 ```
+
+
+\bigskip
+# \faIcon{address-card} References
+
+```{r}
+#courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail],
+
+references %>%
+  dplyr::arrange(desc(To)) %>% 
+  head(4) %>% 
+  vitae::detailed_entries(
+    #why = area ,
+    with = glue::glue("{FirstName} {LastName} ({Email})" ), # * {Phone}" ),
+    when = glue::glue("{From}-{To}"),
+    what = glue::glue("[{Role}] * {Company}, {Department}"),
+    # where = glue::glue("({Role}),{Company},{Department}"),
+    # why = Role,  # certificate 
+    # with = glue::glue("{Email} - {Phone}" ) ,
+    .protect = FALSE # allows links in column
+  )
+    
+```
+ 
+<!-- \vspace*{\fill} -->
+<!-- \footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).}  -->
+
+\vspace*{\fill}
+\footnotesize \textcolor{magenta}{In compliance with the Italian Legislative Decree no. 196 issued on June 30th, 2003, I hereby authorize the recipient of this document to use and process my personal details for staff recruiting purposes.} 
+
+<!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[See \textbf{personal website}]}}  -->

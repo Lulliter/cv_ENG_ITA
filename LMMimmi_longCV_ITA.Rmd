@@ -154,7 +154,7 @@ work_ita %>%
 #months vector assuming 1st month is Jan.
 month_ita_3dig <- c("Gen","Feb","Mar",
               "Apr","Mag","Giu",
-              "Log","Ago","Set",
+              "Lug","Ago","Set",
               "Ott","Nov","Dic")
 #add abbreviated month name
 edu_ita$start_month_ita <- month_ita_3dig[ edu_ita$start_month ]
@@ -163,6 +163,8 @@ edu_ita$end_month_ita <- if_else ( is.na(edu_ita$end_month) ,
                                     month_ita_3dig[as.numeric(edu_ita$end_month) ])
 
 
+
+# !!!!! thesis must be NA in input file to skip the why 
 edu_ita %>%  
   vitae::detailed_entries(with = inst,
                           where = where,
@@ -170,8 +172,10 @@ edu_ita %>%
                           # what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
                           what =  degree ,
                           when = glue::glue("{end_month_ita} {end_year}" ),
-                          why = if_else(!is.na(thesis), glue::glue("Tesi: {thesis}" ,.na = ""), NULL)
-  )
+                          why = thesis 
+                          #glue::glue("Tesi: {thesis}") #if_else(!is.na(thesis), glue::glue("Tesi: {thesis}" , .na = ""), missing = NULL )
+  
+                          )
 ```
 
 \faIcon{handshake} Competenze Personali
@@ -541,7 +545,32 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
   arrange(desc(issued))
 ```
 
+
+\bigskip
+# \faIcon{address-card} Referenze
+
+<!-- Ho tenuto le prime 4  -->
+```{r}
+#names(references_ita)
+references_ita %>%
+  dplyr::arrange(desc(Dal)) %>% 
+  head(4) %>% 
+  vitae::detailed_entries(
+    #why = area ,
+    with = glue::glue("{Nome} {Cognome} ({Email})" ), # * {Phone}" ),
+    when = glue::glue("{Dal}-{Al}"),
+    what = glue::glue("[{Ruolo}] * {Organizzazione}, {Dipartimento}"),
+    # where = glue::glue("({Role}),{Company},{Department}"),
+    # why = Role,  # certificate 
+    # with = glue::glue("{Email} - {Phone}" ) ,
+    .protect = FALSE # allows links in column
+  )
+    
+ 
+```
+
+
 \vspace*{\fill}
-\footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
+\footnotesize \textcolor{magenta}{Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
 
  

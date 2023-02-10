@@ -15,13 +15,13 @@ fs::path_abs(to.dir)
 
 # List Files RES 
 files_RES <- list.files(path = from.dir, 
-                        pattern = glob2rx("*awesome_RES*pdf") , #c ('^awesome_RES', '\\.pdf$'),
+                        pattern = glob2rx("*LMMimmi_RES*pdf") , #c ('^awesome_RES', '\\.pdf$'),
                         full.names = TRUE, # If TRUE, the directory path is prepended to the file names 
                         recursive = FALSE) # Should the listing recurse into directories?
 
 # List Files LONG CV  	
 files_CV <- list.files(path = from.dir, 
-                       pattern = glob2rx("*awesome_long*pdf") , #c ('^awesome_RES', '\\.pdf$'),
+                       pattern = glob2rx("*LMMimmi_long*pdf") , #c ('^awesome_RES', '\\.pdf$'),
                        full.names = TRUE, # If TRUE, the directory path is prepended to the file names 
                        recursive = FALSE) # Should the listing recurse into directories?
 
