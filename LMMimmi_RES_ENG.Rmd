@@ -4,7 +4,7 @@ surname: Mimmi
 #position: Public Policy & Data Analysis
 address: EU citizen (Italy) | USA green card holder
 www: lulliter.com
-phone: +39 348 9528360 
+# phone: +39 348 9528360 
 email: lmm76@georgetown.edu
 linkedin: luisa-m-mimmi
 researchgate: Luisa-Mimmi
@@ -159,13 +159,15 @@ work %>%
 
 ```
 
+\newpage
+
 # \faIcon{handshake} Professional Skills
  
  •	<!-- \faIcon{calculator}--> Exceptional problem solving, critical thinking, and **data analysis skills**, showcased in international development programs    
  •	<!-- \faIcon{sitemap}--> Demonstrated drive and resourcefulness in **leadership roles** for complex projects with multiple stakeholders      
  •	<!-- \faIcon{users}--> Effective interpersonal and **communication skills**, proven by record of multilingual publications and public speaking  
 
-\newpage
+
 
 # \faIcon{graduation-cap} Education
 
@@ -410,7 +412,7 @@ data.frame(
 
 <!-- #### - *** [links outside of page... apa style issues] -->
 
-## \faIcon{paperclip} Peer-Reviewed Articles
+<!-- ## \faIcon{paperclip} Peer-Reviewed Articles -->
 
 ```{r PUBzotero,  eval=FALSE}
 # # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
