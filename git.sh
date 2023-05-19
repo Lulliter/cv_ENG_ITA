@@ -24,8 +24,7 @@ git add  awesome_longCV_ENG.pdf
 
 # commit changes 
 git commit -m "1 hacked kable extra lines + 2 footer is back" -m "1  Had some issues with the header-includes: LaTeX packages, see https://github.com/haozhu233/kableExtra/issues/413 2 reinstalled vitae from Github"
-
-# commit changes 
+git commit -m "added references in LongCVs" -m "both data input (.csv) and .Rmd files"
 git commit -m "small upds new PNRR job on all versions"  
 
 # push 

@@ -17,7 +17,7 @@ params:
     label: cv_code
     value: pol
     input: select
-    choices: ["pol","euro","data"]  
+    choices: ["pol","europrog","data"]  
   position:
     label: position
     value: Esperta di Economia e Politiche Pubbliche
@@ -27,11 +27,11 @@ params:
       label: Short Bio
       value: |-
         **PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.    
-        **OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
+        **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
       input: select
-      choices: ["**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. <br><br>**OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
-      "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br>**OBIETTIVI**: Vorrei applicare le mie competenze analitiche e di _project management_ nella valutazione e implementazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.).",  
-      "**PROFILO**: Economista con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. <br><br>**OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
+      choices: ["**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni per Banche Multilaterali di Sviluppo e fondi UE in studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico. <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
+      "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).",  
+      "**PROFILO**: Economista con comprovata esperienza nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua e servizi igienico-sanitari, energia, mobilità, istruzione e salute). Per lavoro e per passione, seguo costantemente lo sviluppo di tecniche e strumenti di _data science_. <br><br> **OBIETTIVI**: Sono interessata a opportunità lavorative che mi consentano di ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità."]
 
 # aboutme: |-
 #   **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
@@ -168,12 +168,16 @@ work_ita %>%
     .protect = TRUE)
 ```
 
+\endfirstpage 
+
 \faIcon{handshake} Competenze Personali
 ==================================
 
 ▪<!-- \faIcon{calculator}--> Spiccata attitudine al **pensiero logico-critico e all'analisi dei dati**, perfezionata lungo il percorso professionale  
 ▪<!-- \faIcon{sitemap}--> Affidabilità e capacità organizzativa, sviluppate attraverso **leadership** in progetti complessi e internazionali  
 ▪<!-- \faIcon{users}--> Capacità di **comunicazione** (scritta e orale) comprovata da pubblicazioni e presentazioni - Inglese e Spagnolo
+
+\bigskip
 
 
 <!-- \faIcon{calculator} Competenze comunicative -->
@@ -202,6 +206,7 @@ tibble::tribble(
 
 ```
 
+\bigskip
 
 \faIcon{graduation-cap} Istruzione
 ==================================
@@ -231,17 +236,17 @@ edu_ita %>%
 ```
 
 
-\faIcon{medal} Riconoscimenti e Premi
-===============================
-```{r}
-honors_ita %>%
-  vitae::detailed_entries(
-    what = sponsor   ,
-    when = glue::glue("{start}/{end}",.na = "" )  ,
-    with = title
-     )
+<!-- \faIcon{medal} Riconoscimenti e Premi -->
+<!-- =============================== -->
+<!-- ```{r} -->
+<!-- honors_ita %>% -->
+<!--   vitae::detailed_entries( -->
+<!--     what = sponsor   , -->
+<!--     when = glue::glue("{start}/{end}",.na = "" )  , -->
+<!--     with = title -->
+<!--      ) -->
 
-```
+<!-- ``` -->
 
 <!-- \faIcon*{pencil} Formazione Professionale -->
 <!-- =========================== -->
@@ -373,6 +378,8 @@ tribble(
   add_header_above(line = F) 
 ```
 
+\bigskip
+
 
 \faIcon{globe} Competenze Linguistiche
 ==================================
@@ -485,9 +492,11 @@ data.frame(
  
 ```
 
+\bigskip
+
 \textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere lista completa sul profilo \textbf{Google Scholar}]}} 
 
-<!-- \medskip -->
+
 
 <!-- \faIcon{rss} Media Divulgativi -->
 <!-- --------------------------- -->
@@ -513,6 +522,8 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 <!-- \faIcon*{microphone} Presentazioni e Seminari -->
 <!-- =========================== -->
 
+<!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista sul \textbf{sito web personale}]}} -->
+
 ```{r TALKzotero, eval=FALSE}
 # # from Synched Lula-MyTalks.bib (in Zotero)
 # author, title, type, issued, journal
@@ -522,8 +533,6 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
   select(-genre) %>%
   arrange(desc(issued))
 ```
-
-<!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista sul \textbf{sito web personale}]}}  -->
 
 
 <!-- [FAIL} RENDERING DIFFERENT OUTPUTS BASED ON PARAMETERS   -->
@@ -557,4 +566,4 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
 ```
 
 \vspace*{\fill}
-\footnotesize \textcolor{lightgray}{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
+\footnotesize \textcolor{magenta}{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 
