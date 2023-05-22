@@ -9,8 +9,9 @@ renv.lock
 renv/
 
 # private 
-data/
-foto/
+data/*
+foto/*
+zzz_extra/*
 
 .vscode/
  
@@ -24,3 +25,10 @@ foto/
 *.aux
 *.out
 *.tex
+
+
+# Generated outputs in root 
+*.html
+# --- NOT THIS THOUGH!!!!
+!README.HTML 
+!README.html 

@@ -4,7 +4,7 @@
 
 # Purpose
 
-In this this R project I my CV/resume following Mitchell O'Hara-Wild's [R package `vitae`](https://github.com/mitchelloharawild/vitae) ("awwsome"" template define in LATEX in `awesome-cv.cls` )
+In this this R project I my CV/resume following Mitchell O'Hara-Wild's [R package `vitae`](https://github.com/mitchelloharawild/vitae) ("awsome"" template define in LATEX in `awesome-cv.cls` )
 
 I have 4 versions:
 

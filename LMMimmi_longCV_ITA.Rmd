@@ -14,11 +14,8 @@ twitter: lulliter
 headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: |-
-  **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
-  **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
-# aboutme: |-
-#   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
-#     I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. 
+  **PROFIL0**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
+  **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).
 #profilepic: foto/LulaSalvador2015.jpg
 docname: Curriculum Vitae
 csl: apa6-cv.csl # apa-annotated-bibliography.csl
