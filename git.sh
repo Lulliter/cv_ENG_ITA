@@ -25,7 +25,7 @@ git add  awesome_longCV_ENG.pdf
 # commit changes 
 git commit -m "1 hacked kable extra lines + 2 footer is back" -m "1  Had some issues with the header-includes: LaTeX packages, see https://github.com/haozhu233/kableExtra/issues/413 2 reinstalled vitae from Github"
 git commit -m "added 1 job to Resume ITA in LongCVs" -m "both data input (.csv) and .Rmd files"
-git commit -m "small upds new PNRR job on all versions"  
+git commit -m "new profile LMMimmi_RES_ITA.Rmd"  
 git commit -m "modified LMMimmi_RES_ENG.Rmd"  -m "and added to website as CV "
 
 # push 
