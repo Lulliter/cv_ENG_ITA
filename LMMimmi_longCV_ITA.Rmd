@@ -3,7 +3,7 @@ name: Luisa M.
 surname: Mimmi
 position: Esperta di Economia e Politiche Pubbliche
 address: Nata il 26/11/1975 | Cittadina Italiana | Professionista con P.IVA
-www: lulliter.com
+www: luisamimmi.org #lulliter.com
 phone: +39 348 9528360 
 email: lmm76@georgetown.edu
 linkedin: luisa-m-mimmi

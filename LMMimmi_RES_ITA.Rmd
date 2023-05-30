@@ -13,29 +13,43 @@ github: lulliter
 headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 params:
-  cv_code: 
-    label: cv_code
-    value: pol
-    input: select
-    choices: ["pol","europrog","data_infra","data_banche"]  
+  # cv_code: 
+  #   label: cv_code
+  #   value: pol
+  #   input: select
+  #   choices: ["pol","europrog","data_infra","data_banche"]  
   position:
     label: position
-    value: Esperta di Economia e Politiche Pubbliche
+    value: Esperta in Economia dello sviluppo e Sostenibilità
     input: select
-    choices: ["Economia e Valutazione di Politiche Pubbliche","Politiche Pubbliche ed Europrogettazione", "Policy & Data Analyst", "Policy & Business Intelligence Analyst"]
+    choices: [
+    "Esperta in Economia dello sviluppo e Sostenibilità", 
+    "Analista di Fondi UE e PNRR", #1
+    "Valutazione Politiche Pubbliche ed Europrogettazione", #2
+    "Economista -- sviluppo sostenibile", #3
+    "Economia e analisi di mercato", #4
+    "Policy & Data Analyst", #5
+    "Business Intelligence Analyst", #6
+    "Data Scientist", #7
+    "Economista e Data Journalist" #8 
+  ]
   aboutme:
       label: Short Bio
       value: |-
-        **PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  
+        ****PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di analisi di mercato e studi settoriali, monitoraggio e valutazione di impatto e resilienza per progetti di sviluppo economico.  
         **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
       input: select
-      choices: ["**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  <br><br> **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
-
-            "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).",  
-            
-      "**PROFILO**: Esperta nella progettazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi e strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati ad ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità",  
-            
-      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su programmi di sviluppo e strumenti finanziari mirati a promuovere l’accesso equo e sostenibile a servizi pubblici e infrastrutture (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese."]
+      choices: [
+        # pol svil sostenib
+      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di analisi di mercato e studi settoriali, monitoraggio e valutazione di impatto e resilienza per progetti di sviluppo economico.  <br><br> **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
+      # stat - fondi UE 
+            "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).",  
+       # data -  / infra      
+      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi e strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati ad ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità",  
+      # business intelligence - vago      
+      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su programmi di sviluppo e strumenti finanziari mirati a promuovere l’accesso equo e sostenibile a servizi pubblici e infrastrutture (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese.",
+      # giornalismo 
+      "**PROFILO**: Economista con master in Politiche Pubbliche e significativa esperienza internazionale presso società di consulenza, enti governativi e organizzazioni internazionale (Banca Mondiale) nella ricerca economica e nella valutazione d'impatto di politiche di sviluppo economico. Ho una significativa esperienza di ideazione e produzione di contenuti editoriali originali su temi socio-economici, tecnologici per pubblicazioni di varia natura (da blog post/articoli divulgativi a pubblicazioni accademiche). <br><br> **OBIETTIVI**: Cerco opportunità come giornalista o data journalist"]
 
 #   **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
 #   **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."

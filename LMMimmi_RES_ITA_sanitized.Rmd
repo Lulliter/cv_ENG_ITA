@@ -465,7 +465,7 @@ data.frame(
 # # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
 # author, title, type, issued, journal
 
- vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
                              # ,sorting="ydnt"
                               ) %>%
   filter(genre == "Peer-reviewed" ) %>%
