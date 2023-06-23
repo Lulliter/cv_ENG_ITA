@@ -1,0 +1,606 @@
+---
+name: Luisa M.
+surname: Mimmi
+address: Nata il 26/11/1975 | Cittadina Italiana  | Professionista con P.IVA
+www: luisamimmi.org
+phone: +39 348 9528360 
+email: lmm76@georgetown.edu
+linkedin: luisa-m-mimmi
+researchgate: Luisa-Mimmi
+#orcid: 0000-0002-2244-8282
+github: lulliter
+#twitter: lulliter
+headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
+date: "`r format(Sys.time(), '%B %Y')`"
+position: Economista e consulente freelance
+aboutme: |-
+  **PROFIL0**: Professionista con laurea in Economia e master in Politiche Pubbliche (Georgetown University, USA). In 20 anni di esperienza, in Italia e all'estero, ho lavorato presso società di consulenza, enti governativi e organizzazioni internazionali nella valutazione d'impatto e monitoraggio di politiche di sviluppo economico e di fondi UE. Significativa esperienza e talento nel'ideazione, produzione e divulgazione di contenuti editoriali originali su temi socio-economici.  
+  **OBIETTIVO**: Combinare la passione per l'insegnamento e le competenze tecniche e di comunicazione acquisite per applicarle nell'ambito della formazione di studenti e professionisti.
+#profilepic: foto/LulaSalvador2015.jpg
+
+docname: Curriculum Vitae
+csl: apa6-cv.csl # apa-annotated-bibliography.csl
+output:
+  vitae::awesomecv: 
+  keep_tex: false
+  latex_engine: "xelatex" # maybe redund bc in awsomecv is already this 
+always_allow_html: yes
+# from Lore Abad
+header-includes:      
+  \usepackage{float}
+  \usepackage{multicol}
+  # \usepackage{hhline}
+  # \definecolor{light-gray}{gray}{0.95}
+  # \usepackage{colortbl}
+  # \arrayrulecolor{white}
+editor_options: 
+  chunk_output_type: console
+lang: "it"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+#install.packages('BiocManager')
+#if (!require("pacman")) install.packages("pacman")
+#p_load_gh("rstudio" )
+library('pacman'  )  
+library('vitae'  )  
+library('tibble'    )  
+library('dplyr' )
+library('tidyr' )
+# library('ggplot2')
+library('stringr')
+library('lubridate')
+library('magrittr')  
+library('here'  )  
+library('readr' )  
+library('readxl')  
+library('glue'  )  
+library('rorcid')
+library('RefManageR')
+library('scholar')
+# library('emojifont')
+library('fontawesome') 
+# library('ggrepel' ) 
+library('kableExtra') 
+# library('huxtable') 
+# library('gridExtrlibrary')
+
+ 
+# data input (in "./data/data_Lula.R")   -----------------------
+source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
+ 
+ 
+# rorcid_app <- httr::oauth_app(
+#   appname = "rorcid",
+#   key = "APP-7E02XXWNQBFNMG1B",
+#   secret = "74c15780-e323-48a0-9296-ecceaf46e447"
+# )
+
+# ORCID_TOKEN <- Sys.getenv("ORCID_TOKEN") 
+```
+
+
+\faIcon{briefcase} Esperienza Professionale
+============================================
+ 
+ <!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
+
+```{r employment, eval=FALSE, include=FALSE, results='asis'}
+# PREP -----------------------------------
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Lug","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+work_ita$start_month_ita <- month_ita_3dig[ work_ita$start_month ]
+work_ita$end_month_ita <- if_else ( is.na(work_ita$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(work_ita$end_month) ])
+
+# # 1/2 concatenate in bullets --------------
+# work_ita$detail =  Map(c, 
+#                        ifelse(!is.na(work_ita$description_1), work_ita$description_1, NA),
+#                        ifelse(!is.na(work_ita$description_2), work_ita$description_2, NA),
+#                        ifelse(!is.na(work_ita$description_3), work_ita$description_3, NA)
+# ) 
+ 
+# 2/2 concatenate in bullets [EXCEPT NA] ---------
+# Create a master list, a list of lists [ie cols]
+pmapinputs <- list(work_ita$description_1, work_ita$description_2, work_ita$description_3)
+# just 2 bullets for SHORT
+pmapinputs2 <- list(work_ita$description_1, work_ita$description_2)
+
+# create var -----------
+work_ita <- work_ita %>% 
+  mutate(
+    detail_noNA =  purrr::pmap(
+      pmapinputs, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA2 =  purrr::pmap(
+      pmapinputs2, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    )
+  )
+
+# work_ita$detail_noNA  
+
+# real
+work_ita %>%
+  # fix 
+  # mutate(detail = glue::glue("c(\"{description_1}\", \"{description_2}\", \"{description_3}\")",.na = "") ) %>% 
+   vitae::detailed_entries(
+    with =  org , #scambiati x spazio
+    what = title,
+    why = detail_noNA2, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    where = where, #scambiati x spazio
+    .protect = TRUE)
+```
+
+
+ <!-- NEW VERSION FORMAZIONE / SHORTER -->
+
+```{r employmentsplitPrep,include=FALSE }
+# PREP -----------------------------------
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Lug","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+work_ita2$start_month_ita <- month_ita_3dig[ work_ita2$start_month ]
+work_ita2$end_month_ita <- if_else ( is.na(work_ita2$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(work_ita2$end_month) ])
+
+# # 1/2 concatenate in bullets --------------
+# work_ita2$detail =  Map(c, 
+#                        ifelse(!is.na(work_ita2$description_1), work_ita2$description_1, NA),
+#                        ifelse(!is.na(work_ita2$description_2), work_ita2$description_2, NA),
+#                        ifelse(!is.na(work_ita2$description_3), work_ita2$description_3, NA)
+# ) 
+ 
+# 2/2 concatenate in bullets [EXCEPT NA] ---------
+# Create a master list, a list of lists [ie cols]
+pmapinputs <- list(work_ita2$description_1, work_ita2$description_2, work_ita2$description_3)
+# just 2 bullets for SHORT
+pmapinputs2 <- list(work_ita2$description_1, work_ita2$description_2)
+# just 1 bullets for SHORT
+pmapinputs3 <- list(work_ita2$description_1 )
+
+# create var -----------
+work_ita2 <- work_ita2 %>% 
+  mutate(
+    detail_noNA =  purrr::pmap(
+      pmapinputs, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA2 =  purrr::pmap(
+      pmapinputs2, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA3 =  purrr::pmap(
+      pmapinputs3, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    )
+  )
+```
+
+## **CONSULENZA E FORMAZIONE PROFESSIONALE (aziende e PA)** 
+```{r employmentsplit1, results='asis'}
+
+
+work_ita2 %>%
+  filter(org =="CONSULENTE/TRAINER (aziende e PA)") %>% 
+  vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+
+
+# # VERSIONE brief_entries
+# work_ita2 %>%
+# vitae::brief_entries(
+#     what = detail_noNA3,
+#     when = client ,
+#     with =  glue::glue("[{where}]  {start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#     .protect = TRUE)
+
+ 
+#  VERSIONE DIPLOMI
+# work_ita2 %>%
+# vitae::brief_entries(
+#     what = detail_noNA3,
+#     when = client ,
+#     with =  glue::glue("[{where}]  {start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#     .protect = TRUE)
+# 
+
+
+# # VERSIONE DETAILED ENTRY
+# work_ita2 %>%
+#   mutate(detail = glue::glue("c(\"{description_1}\", \"{description_2}\", \"{description_3}\")",.na = "") ) %>%
+#   vitae::detailed_entries(
+#    with =  client ,
+#    #where = glue::glue("[{where}]{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#    why = detail_noNA3,
+#    where = where,
+#    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#    .protect = TRUE)
+#  
+```
+
+## **ECONOMIA E VALUTAZIONE DI POLITICHE DI SVILUPPO (org. internazionali)** 
+```{r employmentsplit2, results='asis'}
+
+work_ita2 %>%    
+  filter(org =="ECONOMISTA DELLO SVILUPPO (organizzazioni internazionali)") %>% 
+ vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+```
+
+## **BUSINESS INTELLIGENCE E ANALISI DI MERCATO**
+```{r employmentsplit3, results='asis'}
+work_ita2 %>%
+      filter(org =="BUSINESS INTELLIGENCE ANALYST") %>% 
+ vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+```
+
+\faIcon{lightbulb} Altre Esperienze di Lavoro/Volontariato
+===================================== 
+
+<!-- #- *** fix punctuation/ latex -->
+
+```{r}
+# service <- tribble( ~what, ~when, ~with,
+#   "Peer Reviewer",                "ongoing",                   "Energy Policy & Journal of the Association of Environmental 
+service_ita %>%
+  slice(1:4)%>% 
+  vitae::detailed_entries(
+  what = what, 
+  when =  when,
+  why = why)
+
+ # , .protect = FALSE # allows links in column
+ #  ) # allows links in column
+  
+```
+
+
+\endfirstpage 
+
+\faIcon{graduation-cap} Istruzione
+==================================
+<!--  \faIcon{university} -->
+```{r EDUCATION}
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Lug","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+edu_ita$start_month_ita <- month_ita_3dig[ edu_ita$start_month ]
+edu_ita$end_month_ita <- if_else ( is.na(edu_ita$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(edu_ita$end_month) ])
+
+
+edu_ita %>%  
+  vitae::detailed_entries(with = inst,
+                          where = where,
+                          # qui non mi serve la durata --> extract portion before "("
+                          # what = str_extract(string = degree, pattern =  "^[^\\(]+" ) ,
+                          what =  degree ,
+                          when = glue::glue("{end_month_ita} {end_year}" )#,
+                         # why = if_else(!is.na(thesis), glue::glue("Tesi: {thesis}" ,.na = ""), NULL)
+  )
+```
+
+\bigskip
+
+\faIcon{handshake} Competenze Personali
+==================================
+
+▪<!-- \faIcon{sitemap}--> Affidabilità e attitudine alla **leadership**, dimostrate come project manager in progetti di ricerca complessi e collaborazioni internazionali  
+▪<!-- \faIcon{calculator}--> Propensione al **pensiero logico-critico** e all'analisi di dati coltivata lungo il percorso professionale  
+▪<!-- \faIcon{users}--> Efficacia nella **comunicazione** (scritta e orale) comprovata da varie pubblicazioni, presentazioni e seminari formativi (anche in inglese e spagnolo)
+
+<!-- \faIcon{medal} Riconoscimenti e Premi -->
+<!-- =============================== -->
+<!-- ```{r} -->
+<!-- honors_ita %>% -->
+<!--   vitae::detailed_entries( -->
+<!--     what = sponsor   , -->
+<!--     when = glue::glue("{start}/{end}",.na = "" )  , -->
+<!--     with = title -->
+<!--      ) -->
+
+<!-- ``` -->
+
+<!-- \faIcon*{pencil} Formazione Professionale -->
+<!-- =========================== -->
+
+<!-- ```{r} -->
+<!-- #courses <- tribble( ~area, ~accomplishment, ~year, [~where], [~detail], -->
+<!-- courses_ita %>% -->
+<!--   vitae::detailed_entries( -->
+<!--     #why = area , -->
+<!--     what = accomplishment, -->
+<!--     when = year , -->
+<!--     why = detail, # certificate  -->
+<!--     .protect = FALSE # allows links in column -->
+<!--   ) -->
+
+<!-- ``` -->
+
+<!-- \faIcon{r-project}  Progetti di Data Science   -->
+<!-- =====================================  -->
+
+<!-- <!-- #### - *** [non tradotti] --> 
+
+<!-- ```{r PROJECTS} -->
+<!-- # ~area,  ~year, ~accomplishment, ~where, ~link, -->
+<!-- # projects %>% -->
+<!-- # detailed_entries( -->
+<!-- #     with = area, -->
+<!-- #     when =  year, -->
+<!-- #     what = accomplishment,  -->
+<!-- #     # where = where, -->
+<!-- #         why = link, -->
+<!-- #         .protect = FALSE, # to turn link in LATEX  -->
+<!-- #   ) -->
+
+
+<!-- #projects2 <- tibble::tribble(~name,  ~year, ~explain, -->
+<!-- projects2_ita %>% -->
+<!--   vitae::detailed_entries( -->
+<!--     what = name, -->
+<!--     when = year, -->
+<!--     #with = NA_character_, -->
+<!--     why = explain, -->
+<!--     #where = NA_character_, -->
+<!--     .protect = FALSE -->
+<!--   ) -->
+
+<!-- ``` -->
+
+ 
+<!-- FOR THESE I AM NOT ACTUALLY USING data_Lula.R [I extract from .bib directly using `vitae::bibliography_entries` own function ] -->
+
+<!-- \newpage -->
+
+
+\faIcon{laptop-code} Competenze Informatiche
+=============================== 
+
+<!-- \faIcon{file-code} -->
+<!-- ```{r sw_opt1} -->
+<!-- # software %>% -->
+<!-- #    vitae::detailed_entries( -->
+<!-- #    what  = skills , -->
+<!-- #     with =  area, -->
+<!-- #     where = detail # -->
+<!-- #   ) -->
+<!-- #   -->
+<!-- software %>% -->
+<!--    vitae::detailed_entries( -->
+<!--    what  = glue::glue("  {area}: [{skills}]") -->
+<!--     #,where = detail # -->
+<!--   ) -->
+
+<!-- # software %>% -->
+<!-- #    vitae::brief_entries( -->
+<!-- #    what  = area , -->
+<!-- #     with =  skills -->
+<!-- #       -->
+<!-- #   ) -->
+<!-- ``` -->
+
+
+```{r  sw_opt2, results='markup'}
+# Lorena Abad, ma non viene !
+# https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
+
+tribble(
+  ~`Suite per ufficio`, ~`Statistica/Database`, ~`Business Intelligence`, ~`Altro`,
+ #"(avanzato)", "(avanzato)",  "(base)",  "(base)",
+   "MS Office, Google Suite, LibreOffice",  
+        "R, RStudio, Stata, SQL, Excel",  
+            "SAP, Salesforce, Power BI",
+                "Git, Github, Unix Shell, Markdown, QGis" # CSS, HTML, LaTeX, 
+)  %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
+  row_spec(0, bold = T, color = "#009acd") %>%
+  row_spec(1, bold = F, italic = T, color = "#7f7f7f") %>%
+  column_spec(column = 1:4, width = '4 cm')  %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+```
+
+
+\faIcon{globe} Competenze Linguistiche
+==================================
+
+<!-- ```{r lan_opt1} -->
+<!-- languages %>%  -->
+<!--   vitae::detailed_entries( -->
+<!--     what = glue::glue("{area}: [{skills}]")  -->
+<!--     ) -->
+<!-- ``` -->
+
+```{r lan_opt2, eval=FALSE, results='markup'}
+# next
+data.frame(
+  Livello = c("Lettura", "Scrittura", "Ascolto","Parlato"),
+  Italiano = cell_spec(c(rep("Madrelingua", 4)), 'latex', color = '#005c7b'), 
+  Inglese = cell_spec(c("C2","C2","C2","C2"), 'latex', color = '#009acd'), 
+  Spagnolo = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#4cb8dc'), 
+  Portoghese = cell_spec(c("B2","A1","B2","B2"), 'latex', color = '#4cb8dc')
+  #Francese = cell_spec(c("A2","A1","A1","A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  # footnote(
+  #   footnote_as_chunk = T,
+  #   general_title = " ",
+  #   general = "\\\\tiny Quadro comune europeo di riferimento per le lingue: A1/A2:Utente base; B1/B2: Utente autonomo; C1/C2: Utente avanzato",
+  #   escape = F)  %>% 
+  row_spec(0, bold = T, color = "#009acd") %>% 
+  column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+  # TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+```
+
+```{r lan_opt3, results='markup'}
+data.frame(
+  Livello =  c("(Scritto e Orale)" ),
+  Italiano = cell_spec( c("Madrelingua" ), 'latex', color = '#005c7b'), 
+  Inglese = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
+  Spagnolo = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
+  Portoghese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
+  Francese = cell_spec(c("A1"), 'latex', color = '#7fcce6') 
+)  %>% 
+  kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  # footnote(
+  #   footnote_as_chunk = T,
+  #   general_title = " ",
+  #   general = "\\\\tiny Quadro comune europeo di riferimento per le lingue: A1/A2:Utente base; B1/B2: Utente autonomo; C1/C2: Utente avanzato",
+  #   escape = F)  %>% 
+  row_spec(0, bold = T, color = "#009acd") %>% 
+  column_spec(column = 1, bold = F, italic = T, color = "#7f7f7f") %>% 
+  column_spec(column = 1:6, width = '2.4cm')   %>% 
+# TRYING TO HAVE NO HORIZONTAL LINES  
+  #row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}" ) %>% 
+  #row_spec( extra_latex_after = "\\arrayrulecolor{white}")  %>%
+   sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .) %>% 
+  add_header_above(line = F) 
+```
+
+\medskip
+
+\faIcon*{microphone} Presentazioni e Seminari
+===========================
+
+<!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista completa sul \textbf{sito web personale}]}} -->
+
+```{r TALKzotero}
+# # from Synched Lula-MyTalks.bib (in Zotero)
+# author, title, type, issued, journal
+
+vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")# ,sorting="ydnt"
+) %>%
+  filter(genre == "Lesson") %>% 
+  select(-genre) %>%
+  arrange(desc(issued)) -> talks
+
+talks
+```
+
+\bigskip
+
+\faBook[solid] Pubblicazioni
+===========================
+
+\textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere lista completa sul profilo \textbf{Google Scholar}]}} 
+
+<!-- #### - *** [links outside of page... apa style issues] -->
+
+<!-- \faIcon{paperclip} Articoli su Riviste Scientifiche -->
+<!-- --------------------------- -->
+
+```{r PUBzotero,  eval=FALSE}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+
+ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>%
+  filter(genre == "Peer-reviewed" ) %>%
+  select(-genre) %>%
+  arrange(desc(issued)) %>%
+  filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
+
+```
+
+<!-- \faBookOpen[regular] Articoli su Riviste Scientifiche & Report Tecnici -->
+<!-- --------------------------- -->
+
+<!-- \faBookOpen[regular] Report Tecnici -->
+<!-- --------------------------- -->
+
+```{r TECzotero,  eval=FALSE}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+ 
+ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+  filter(genre != "Peer-reviewed" ) %>% 
+  select(-genre) %>% 
+  arrange(desc(issued)) %>% 
+  filter( stringr::str_detect(type ,"webpage" , negate = TRUE)  )
+ 
+```
+
+
+
+<!-- \faIcon{rss} Media Divulgativi -->
+<!-- --------------------------- -->
+
+<!-- <!-- MUST escaped hash symbols, #, in URLs. !!!!!!!!!!!!!!! -->  
+<!-- \textcolor{cyan}{\href{https://lulliter.com/publications.html\#misc.-divulgative-pieces}{[Vedere lista sul \textbf{sito web personale}]}}  -->
+
+
+```{r BLOGzotero, eval=FALSE}
+# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+# author, title, type, issued, journal
+
+vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow.bib")
+                             # ,sorting="ydnt"
+                              ) %>% 
+     arrange(desc(issued)) %>% 
+  select(-genre) %>% 
+  filter( stringr::str_detect(type ,"webpage" )  )
+
+```
+
+
+
+
+\vspace*{\fill}
+\footnotesize \textcolor{magenta}{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).} 

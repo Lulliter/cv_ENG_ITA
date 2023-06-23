@@ -357,67 +357,63 @@ display: none;
 <h1>Purpose</h1>
 <p>In this this R project I my CV/resume following Mitchell
 O’Hara-Wild’s <a href="https://github.com/mitchelloharawild/vitae">R
-package <code>vitae</code></a> (“awwsome”” template define in LATEX in
+package <code>vitae</code></a> (“awesome”” template define in LATEX in
 <code>awesome-cv.cls</code> )</p>
 <p>I have 4 versions:</p>
 <ul>
 <li>Long, in Italian 🇮🇹</li>
 <li>Long, in English 🇺🇸</li>
-<li>Short, in Italian 🇮🇹</li>
+<li>Short, in Italian 🇮🇹 (2 versions)</li>
 <li>Short, in English 🇺🇸</li>
 </ul>
 <div id="notes" class="section level2">
 <h2>NOTES</h2>
 <ul>
-<li>:white_check_mark: A major “gotcha” was the possibility to insert
-Publications &amp; Talks exploiting my <strong>Zotero</strong>
-collections in the <code>....bib</code> format that can be entered
-directly via the function <code>vitae::bibliography_entries</code>.
+<li>✅ <code>lang: &quot;it&quot;</code> for Italian in bibliography ☑️ but footer
+stays ni EN “June 2023”</li>
+<li>✅ A major “gotcha” 🤯 was the possibility to insert Publications
+&amp; Talks exploiting my <strong>Zotero</strong> collections in the
+<code>....bib</code> format that can be entered directly via the
+function <code>vitae::bibliography_entries</code>.
 <ul>
 <li>(*) when exporting from Zotero better to select BetterBibLaTeX</li>
 </ul></li>
-<li>:white_check_mark: Most other information is saved in
-<code>./data/*.csv</code>which get loaded via
-<code>data/cv_data_ENG_ITA.R</code>, except for
-<strong>Comepetences</strong> (Personal, Software, Language) which are
-defined in <code>*.Rmd</code> files
+<li>✅ Most other information is saved in <code>./data/*.csv</code>which
+get loaded via <code>data/cv_data_ENG_ITA.R</code>, except for
+Competences (Personal, Software, Language) which are defined in
+<code>*.Rmd</code> files
 <ul>
-<li>:warning: see notes in the <code>.Rmd</code> files on how to deal
-with <code>csv -&gt; latex</code> formatting nightmare (</li>
-<li>:ballot_box_with_check: fixing <code>.*csv</code> files directly
-from Excel or R will have different implications on <code>&quot;&quot;</code>
-rendering via latex</li>
+<li>⚠️ see notes in the <code>.Rmd</code> files on how to deal with
+<code>csv -&gt; latex</code> formatting nightmare (</li>
+<li>☑️ fixing <code>.*csv</code> files directly from Excel or R will
+have different implications on <code>&quot;&quot;</code> rendering via latex</li>
 </ul></li>
-<li>:question: the language tables (copied from <a href="https://github.com/loreabad6/R-CV">Lorena Abad</a>) use
+<li>❓ the language tables (copied from <a href="https://github.com/loreabad6/R-CV">Lorena Abad</a>) use
 <code>knitr::kable()</code> with <code>latex_options</code>… this
 implicated downloading of LaTeX packages (<code>float</code>,
 <code>xcolor</code>, <code>colortbl</code>?)…which have been giving
 issues with compiling</li>
-<li>:white_check_mark: The best way to deal with “ANONIMIZATION”
-(i.e. Eutalia) is directly on <code>PDFreader</code> by redacting the
-PDF</li>
+<li>✅ The best way to deal with “ANONIMIZATION” (i.e. Eutalia) is
+directly on <code>PDFreader</code> by redacting the PDF</li>
 </ul>
 </div>
 <div id="to-dos" class="section level2">
 <h2>TO DOs</h2>
 <ul>
-<li><p>:ballot_box_with_check: revise and write instructions to be
-consistent adding rows to <code>.*csv</code> files in terms of
-quotes/links etc</p></li>
-<li><p><del>:ballot_box_with_check: Current version of
-<code>vitae</code> does not print footer anymore…fixed by dev
-version</del></p></li>
-<li><p>:question: <code>apa6-cv.csl</code> seems OK except hyperlink
-exceed page width…. must check other formatting</p></li>
+<li><p>☑️ revise and write instructions to be consistent adding rows to
+<code>.*csv</code> files in terms of quotes/links etc</p></li>
+<li><p>☑️ <del>Current version of <code>vitae</code> does not print
+footer anymore…fixed by dev version</del></p></li>
+<li><p>❓<code>apa6-cv.csl</code> seems OK except hyperlink exceed page
+width…. must check other formatting</p></li>
 </ul>
 </div>
 <div id="recurrent-fixes" class="section level2">
 <h2>RECURRENT FIXES</h2>
 <ul>
-<li><p>:ballot_box_with_check: The <code>vitae</code> pckg relies on
-LaTeX “if you’re encountering issues, please check that LaTeX is
-installed. The <a href="https://github.com/rstudio/tinytex">tinytex
-package</a> makes it easy to setup LaTeX within R:</p>
+<li><p>☑️ The <code>vitae</code> pckg relies on LaTeX “if you’re
+encountering issues, please check that LaTeX is installed. The <a href="https://github.com/rstudio/tinytex">tinytex package</a> makes it
+easy to setup LaTeX within R:</p>
 <pre class="r"><code>    install.packages(&#39;tinytex&#39;)
     tinytex::install_tinytex()
     ```
