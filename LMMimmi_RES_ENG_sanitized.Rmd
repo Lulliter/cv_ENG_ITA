@@ -317,12 +317,13 @@ honors %>%
 # https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
 
 tribble(
-  ~`Office Suite`, ~`Statistics/Databases`, ~`GIS`, ~`Other`,
+  ~`Office Suite`, ~`Statistics/Databases`, ~`Business Intelligence`, ~`Other`,
   "(Expert)", "(Expert)",  "(Basic)",  "(Basic)",
- "MS Office, iWork Suite, Google Suite, LibreOffice",    
-   "R, RStudio, Stata, SQL, Salesforce, MS Excel",
-      "ArcGIS, QGIS, GeoDa, OpenStreetMap",
-        "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown"
+  "MS Office, GSuite, LibreOffice", # iWork Suite,    
+  "R, RStudio, Stata, SQL, Excel",
+  "Salesforce, SAP, Power BI",
+  #       "ArcGIS, QGIS, GeoDa, OpenStreetMap",
+  "Markdown, Git, Github, Unix Shell, QGIS" # CSS, HTML, LaTeX, 
 )  %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%

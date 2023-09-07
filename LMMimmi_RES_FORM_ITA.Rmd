@@ -14,7 +14,7 @@ headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
 position: Economista e consulente freelance
 aboutme: |-
-  **PROFIL0**: Professionista con laurea in Economia e master in Politiche Pubbliche (Georgetown University, USA). In 20 anni di esperienza, in Italia e all'estero, ho lavorato presso società di consulenza, enti governativi e organizzazioni internazionali nella valutazione d'impatto e monitoraggio di politiche di sviluppo economico e di fondi UE. Significativa esperienza e talento nel'ideazione, produzione e divulgazione di contenuti editoriali originali su temi socio-economici.  
+  **PROFIL0**: Professionista con laurea in Economia e master in Politiche Pubbliche (Georgetown University, USA). In 20 anni di esperienza, in Italia e all'estero, ho lavorato presso società di consulenza, enti governativi e organizzazioni internazionali nella valutazione d'impatto e monitoraggio di politiche di sviluppo economico e di fondi UE. Significativa esperienza e talento nell'ideazione, produzione e divulgazione di contenuti su temi socio-economici a scopo di ricerca/formazione.  
   **OBIETTIVO**: Combinare la passione per l'insegnamento e le competenze tecniche e di comunicazione acquisite per applicarle nell'ambito della formazione di studenti e professionisti.
 #profilepic: foto/LulaSalvador2015.jpg
 
@@ -195,7 +195,7 @@ work_ita2 <- work_ita2 %>%
   )
 ```
 
-## **CONSULENZA E FORMAZIONE PROFESSIONALE (aziende e PA)** 
+## **CONSULENTE ECONOMICO PER AZIENDE E PUBBLICA AMMINISTRAZIONE** 
 ```{r employmentsplit1, results='asis'}
 
 
@@ -242,7 +242,7 @@ work_ita2 %>%
 #  
 ```
 
-## **ECONOMIA E VALUTAZIONE DI POLITICHE DI SVILUPPO (org. internazionali)** 
+## **ECONOMISTA ESPERTA IN VALUTAZIONE POLITICHE DI SVILUPPO (Org. Internazionali)** 
 ```{r employmentsplit2, results='asis'}
 
 work_ita2 %>%    
@@ -256,7 +256,7 @@ work_ita2 %>%
     .protect = TRUE)
 ```
 
-## **BUSINESS INTELLIGENCE E ANALISI DI MERCATO**
+## **BUSINESS INTELLIGENCE ANALYST**
 ```{r employmentsplit3, results='asis'}
 work_ita2 %>%
       filter(org =="BUSINESS INTELLIGENCE ANALYST") %>% 
@@ -269,7 +269,7 @@ work_ita2 %>%
     .protect = TRUE)
 ```
 
-\faIcon{lightbulb} Altre Esperienze di Lavoro/Volontariato
+\faIcon{handshake} Altre Esperienze di Lavoro/Volontariato
 ===================================== 
 
 <!-- #- *** fix punctuation/ latex -->
@@ -321,7 +321,7 @@ edu_ita %>%
 
 \bigskip
 
-\faIcon{handshake} Competenze Personali
+\faIcon{lightbulb} Competenze Personali
 ==================================
 
 ▪<!-- \faIcon{sitemap}--> Affidabilità e attitudine alla **leadership**, dimostrate come project manager in progetti di ricerca complessi e collaborazioni internazionali  
@@ -488,13 +488,19 @@ data.frame(
 data.frame(
   Livello =  c("(Scritto e Orale)" ),
   Italiano = cell_spec( c("Madrelingua" ), 'latex', color = '#005c7b'), 
-  Inglese = cell_spec(c("C2" ), 'latex', color = '#009acd'), 
+  Inglese = cell_spec(c("C2 [note]" ), 'latex', color = '#009acd'), 
   Spagnolo = cell_spec(c("C2"), 'latex', color = '#4cb8dc'), 
   Portoghese = cell_spec(c("B1"), 'latex', color = '#4cb8dc'),
   Francese = cell_spec(c("A1"), 'latex', color = '#7fcce6') 
 )  %>% 
   kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>% 
+  # footnote [note]
+  add_footnote(
+    c("[Certificazione LanguageCert ESOL International 'Mastery C2']"), 
+    notation = "symbol"
+  ) %>% 
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%  
+  # footnote GENERAL 
   # footnote(
   #   footnote_as_chunk = T,
   #   general_title = " ",

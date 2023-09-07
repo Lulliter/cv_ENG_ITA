@@ -2,7 +2,7 @@
 
 # Parameters --------------------------------------------------------------
 position <-  list(
-  "Esperta in Economia dello sviluppo e Sostenibilità", #1
+"Esperta in Economia dello sviluppo e Sostenibilità", #1
 "Economista e Analista di Fondi UE e PNRR", #2
 "Valutazione Politiche Pubbliche ed Europrogettazione", #3
 "Economista -- sviluppo sostenibile", #4

@@ -12,52 +12,12 @@ github: lulliter
 #twitter: lulliter
 headcolor: 0088cc #cc0066 # 0088cc #0073e6 #990000
 date: "`r format(Sys.time(), '%B %Y')`"
-params:
-  # cv_code: 
-  #   label: cv_code
-  #   value: pol
-  #   input: select
-  #   choices: ["pol","europrog","data_infra","data_banche"]  
-  position:
-    label: position
-    value: Esperta in Economia dello sviluppo e Sostenibilità
-    input: select
-    choices: [
-    "Esperta in Economia dello sviluppo e Sostenibilità", 
-    "Analista di Fondi UE e PNRR", #1
-    "Valutazione Politiche Pubbliche ed Europrogettazione", #2
-    "Economista -- sviluppo sostenibile", #3
-    "Economia e analisi di mercato", #4
-    "Policy & Data Analyst", #5
-    "Business Intelligence Analyst", #6
-    "Data Scientist", #7
-    "Economista e Data Journalist" #8 
-  ]
-  aboutme:
-      label: Short Bio
-      value: |-
-        ****PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di analisi di mercato e studi settoriali, monitoraggio e valutazione di impatto e resilienza per progetti di sviluppo economico.  
-        **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.
-      input: select
-      choices: [
-        # pol svil sostenib
-      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di analisi di mercato e studi settoriali, monitoraggio e valutazione di impatto e resilienza per progetti di sviluppo economico.  <br><br> **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
-      # stat - fondi UE 
-            "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).",  
-       # data -  / infra      
-      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su interventi e strumenti finanziari mirati a promuovere l’accesso inclusivo e sostenibile a servizi infrastrutturali di base (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati ad ideare e implementare approcci basati sui dati per migliorare l’accesso e la disponibilità di servizi infrastrutturali di alta qualità",  
-      # business intelligence - vago      
-      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su programmi di sviluppo e strumenti finanziari mirati a promuovere l’accesso equo e sostenibile a servizi pubblici e infrastrutture (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese.",
-      # giornalismo 
-      "**PROFILO**: Economista con master in Politiche Pubbliche e significativa esperienza internazionale presso società di consulenza, enti governativi e organizzazioni internazionale (Banca Mondiale) nella ricerca economica e nella valutazione d'impatto di politiche di sviluppo economico. Ho una significativa esperienza di ideazione e produzione di contenuti editoriali originali su temi socio-economici, tecnologici per pubblicazioni di varia natura (da blog post/articoli divulgativi a pubblicazioni accademiche). <br><br> **OBIETTIVI**: Cerco opportunità come giornalista o data journalist"]
+position: Esperta di Economia e Politiche Pubbliche
+aboutme: |-
+  **PROFILO**: Economista con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Significativa esperienza (Italia & USA) presso banche multilaterali di sviluppo e società di consulenza: analisi di mercato e studi settoriali, monitoraggio e valutazione di impatto e resilienza per progetti di sviluppo economico, ambito infrastrutture.  
+  **OBIETTIVO**: Applicare le mie competenze analitiche e di comunicazione/ricerca nell'ambito dello studio delle dinamiche geoeconomiche in atto e delle politiche per lo sviluppo sostenibile.
+profilepic: foto/LulaSalvador2015.jpg
 
-#   **PROFILO**: Economista con una solida esperienza nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza in Italia e all'estero, ho valutato la fattibilità e l'impatto di politiche e strumenti finanziari finalizzati all'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, acqua e servizi igienico-sanitari, energia, istruzione e salute).  
-#   **OBIETTIVO PROFESSIONALE**: Applicare le mie competenze analitiche e di project management all'implementazione e alla valutazione dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Next Generation EU, FESR, FSE, Fondi di Coesione, Horizon Europe, ecc.)."
-# aboutme: |-
-#   I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health).  
-#     I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues. 
-
-#profilepic: foto/LulaSalvador2015.jpg
 docname: Curriculum Vitae
 csl: apa6-cv.csl # apa-annotated-bibliography.csl
 output:
@@ -65,7 +25,8 @@ output:
   keep_tex: false
   latex_engine: "xelatex" # maybe redund bc in awsomecv is already this 
 always_allow_html: yes
-header-includes:        # from Lore Abad
+# from Lore Abad
+header-includes:      
   \usepackage{float}
   \usepackage{multicol}
   # \usepackage{hhline}
@@ -74,9 +35,11 @@ header-includes:        # from Lore Abad
   # \arrayrulecolor{white}
 editor_options: 
   chunk_output_type: console
-position: "`r params$position`" # must come AFTER the params declaration Esperta di Economia e Politiche Pubbliche
-aboutme: "`r params$aboutme`" # must come AFTER the params declaration Esperta di Economia e Politiche Pubbliche
+lang: "it"
 ---
+
+
+
 
 <!-- PARAMETRIZED WITH 3 PROFILES  -->
 
@@ -129,7 +92,7 @@ source(file = here::here("data", "cv_data_ENG_ITA.R")) # "data.r"
  
  <!-- + From Microsoft .csv must be saved as CSV UTF_8 or it will mess up apostrophes -->
 
-```{r employment, results='asis'}
+```{r employment, eval=FALSE, include=FALSE, results='asis'}
 # PREP -----------------------------------
 #months vector assuming 1st month is Jan.
 month_ita_3dig <- c("Gen","Feb","Mar",
@@ -157,18 +120,18 @@ pmapinputs2 <- list(work_ita$description_1, work_ita$description_2)
 
 # create var -----------
 work_ita <- work_ita %>% 
-  mutate(detail_noNA =  purrr::pmap(
-    pmapinputs, # a master list of all the lists we want to iterate over
-    # dplyr::across(c("description_1","description_2","description_3")),
-    ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+  mutate(
+    detail_noNA =  purrr::pmap(
+      pmapinputs, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
     ),
     detail_noNA2 =  purrr::pmap(
-    pmapinputs2, # a master list of all the lists we want to iterate over
-    # dplyr::across(c("description_1","description_2","description_3")),
-    ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+      pmapinputs2, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
     )
-    
-    )
+  )
 
 # work_ita$detail_noNA  
 
@@ -185,7 +148,133 @@ work_ita %>%
     .protect = TRUE)
 ```
 
-\endfirstpage 
+
+ <!-- NEW VERSION FORMAZIONE / SHORTER -->
+
+```{r employmentsplitPrep,include=FALSE }
+# PREP -----------------------------------
+#months vector assuming 1st month is Jan.
+month_ita_3dig <- c("Gen","Feb","Mar",
+              "Apr","Mag","Giu",
+              "Lug","Ago","Set",
+              "Ott","Nov","Dic")
+#add abbreviated month name
+work_ita2$start_month_ita <- month_ita_3dig[ work_ita2$start_month ]
+work_ita2$end_month_ita <- if_else ( is.na(work_ita2$end_month) ,
+                                    "Oggi",
+                                    month_ita_3dig[as.numeric(work_ita2$end_month) ])
+
+# # 1/2 concatenate in bullets --------------
+# work_ita2$detail =  Map(c, 
+#                        ifelse(!is.na(work_ita2$description_1), work_ita2$description_1, NA),
+#                        ifelse(!is.na(work_ita2$description_2), work_ita2$description_2, NA),
+#                        ifelse(!is.na(work_ita2$description_3), work_ita2$description_3, NA)
+# ) 
+ 
+# 2/2 concatenate in bullets [EXCEPT NA] ---------
+# Create a master list, a list of lists [ie cols]
+pmapinputs <- list(work_ita2$description_1, work_ita2$description_2, work_ita2$description_3)
+# just 2 bullets for SHORT
+pmapinputs2 <- list(work_ita2$description_1, work_ita2$description_2)
+# just 1_3 bullets for SHORT (il 3 e' l'esempio !)
+pmapinputs1_3 <- list(work_ita2$description_1 , work_ita2$description_3)
+
+# create var -----------
+work_ita2 <- work_ita2 %>% 
+  mutate(
+    detail_noNA =  purrr::pmap(
+      pmapinputs, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA2 =  purrr::pmap(
+      pmapinputs2, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    ),
+    detail_noNA1_3 =  purrr::pmap(
+      pmapinputs1_3, # a master list of all the lists we want to iterate over
+      # dplyr::across(c("description_1","description_2","description_3")),
+      ~ na.omit(c(...)) # na.omit returns the object with incomplete cases removed
+    )
+  )
+```
+
+## **CONSULENTE ECONOMICO PRESSO THINK TANK E PA (Italia)** 
+```{r employmentsplit1, results='asis'}
+
+
+work_ita2 %>%
+  filter(org =="CONSULENTE/TRAINER (aziende e PA)") %>% 
+  # tolgo per far spazio 
+  filter(client != "Varie PMI e centri ricerca italiani" ) %>% 
+  vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA1_3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+
+
+# # VERSIONE brief_entries
+# work_ita2 %>%
+# vitae::brief_entries(
+#     what = detail_noNA3,
+#     when = client ,
+#     with =  glue::glue("[{where}]  {start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#     .protect = TRUE)
+
+ 
+#  VERSIONE DIPLOMI
+# work_ita2 %>%
+# vitae::brief_entries(
+#     what = detail_noNA3,
+#     when = client ,
+#     with =  glue::glue("[{where}]  {start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#     .protect = TRUE)
+# 
+
+
+# # VERSIONE DETAILED ENTRY
+# work_ita2 %>%
+#   mutate(detail = glue::glue("c(\"{description_1}\", \"{description_2}\", \"{description_3}\")",.na = "") ) %>%
+#   vitae::detailed_entries(
+#    with =  client ,
+#    #where = glue::glue("[{where}]{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#    why = detail_noNA3,
+#    where = where,
+#    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+#    .protect = TRUE)
+#  
+```
+
+## **SPECIALISTA DI VALUTAZIONE DI POLITICHE DI SVILUPPO (Org. Internazionali)** 
+```{r employmentsplit2, results='asis'}
+
+work_ita2 %>%    
+  filter(org =="ECONOMISTA DELLO SVILUPPO (organizzazioni internazionali)") %>% 
+ vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA1_3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+```
+
+## **BUSINESS INTELLIGENCE ANALYST**
+```{r employmentsplit3, results='asis'}
+work_ita2 %>%
+      filter(org =="BUSINESS INTELLIGENCE ANALYST") %>% 
+ vitae::detailed_entries(
+    what =  glue::glue("{client}  [{where}]") , #uniti x spazio
+    #what = title,
+    why = detail_noNA1_3, #detail_noNA,
+    when = glue::glue("{start_month_ita} {start_year}-{end_month_ita} {end_year}",.na = ""),
+    #where = where, #scambiati x spazio
+    .protect = TRUE)
+```
 
 \faIcon{handshake} Competenze Personali
 ==================================
@@ -194,7 +283,8 @@ work_ita %>%
 ▪<!-- \faIcon{sitemap}--> Affidabilità e capacità organizzativa, sviluppate attraverso **leadership** in progetti complessi e internazionali  
 ▪<!-- \faIcon{users}--> Capacità di **comunicazione** (scritta e orale) comprovata da pubblicazioni e presentazioni - Inglese e Spagnolo
 
-\bigskip
+\endfirstpage 
+
 
 
 <!-- \faIcon{calculator} Competenze comunicative -->
@@ -223,7 +313,7 @@ tibble::tribble(
 
 ```
 
-\bigskip
+<!-- \bigskip -->
 
 \faIcon{graduation-cap} Istruzione
 ==================================
@@ -375,12 +465,12 @@ edu_ita %>%
 # https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
 
 tribble(
-  ~`Suite per ufficio`, ~`Statistica/Database`, ~`GIS`, ~`Altro`,
- "(Utente avanzato)", "(Utente avanzato)",  "(Utente base)",  "(Utente base)",
-   "MS Office, iWork Suite, Google Suite, LibreOffice",  
-        "R, RStudio, Stata, SQL, Salesforce, MS Excel",  
-            "ArcGIS, QGIS, GeoDa, OpenStreetMap",
-                "Git, Github, Unix Shell, CSS, HTML, LaTeX, Markdown,"
+  ~`Suite per ufficio`, ~`Statistica/Database`, ~`Business Intelligence`, ~`Altro`,
+ "(avanzato)", "(avanzato)",  "(base)",  "(base)",
+   "MS Office, Google Suite, LibreOffice",  
+        "R, RStudio, Stata, SQL, Excel",  
+            "SAP, Salesforce, Power BI",
+                "Git, Github, Unix Shell, Markdown, QGis" # CSS, HTML, LaTeX, 
 )  %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex")  %>%
   kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
@@ -395,7 +485,7 @@ tribble(
   add_header_above(line = F) 
 ```
 
-\bigskip
+<!-- \bigskip -->
 
 
 \faIcon{globe} Competenze Linguistiche
@@ -509,7 +599,7 @@ data.frame(
  
 ```
 
-\bigskip
+<!-- \bigskip -->
 
 \textcolor{cyan}{\href{https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao)}{[Vedere lista completa sul profilo \textbf{Google Scholar}]}} 
 
@@ -536,19 +626,23 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 ```
 
 
-<!-- \faIcon*{microphone} Presentazioni e Seminari -->
-<!-- =========================== -->
+\faIcon*{microphone} Presentazioni e Seminari (selezione)
+===========================
 
 <!-- \textcolor{magenta}{\href{https://lulliter.com/publications.html\#selected-presentations}{[Vedere lista sul \textbf{sito web personale}]}} -->
 
-```{r TALKzotero, eval=FALSE}
+```{r TALKzotero}
 # # from Synched Lula-MyTalks.bib (in Zotero)
 # author, title, type, issued, journal
-vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
-                            # ,sorting="ydnt"
+
+vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")# ,sorting="ydnt"
 ) %>%
+#  filter(genre == "Lesson") %>% 
+slice (1:4)%>% 
   select(-genre) %>%
-  arrange(desc(issued))
+  arrange(desc(issued)) -> talks
+
+talks
 ```
 
 

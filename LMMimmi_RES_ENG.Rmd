@@ -18,19 +18,20 @@ params:
     label: cv_code
     value: pol
     input: select
-    choices: ["pol", "euro","data"]  
+    choices: ["journ","pol", "euro","data"]  
   position:
     label: position
     value: "Economist and Policy Analyst"
     input: select
-    choices: ["Economist and Policy Analyst", "Expert of Public Policy and EU funds planning","Public Policy & Data Analysis"]
+    choices: ["Economist and Data Journalist","Economist and Policy Analyst", "Expert of Public Policy and EU funds planning","Public Policy & Data Analysis"]
   aboutme:
       label: Short Bio
       value: "**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). \n\n**GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of policies for sustainable development within the national & EU context."
       input: select
       choices: ["**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health). \n\n**GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of policies for sustainable development within the national & EU context.",  
       "**PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  \n\n**GOAL**: I am currently pursuing opportunities to apply my policy analysis and project management skills towards the implementation and evaluation of national & EU Structural and Investment Funds (PNRR, Next Generation EU, ERDF, ESF, CF, Horizon, etc).", 
-     "**PROFILE**: I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health). \n\n**GOAL**: I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues."]
+     "**PROFILE**: I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health). \n\n**GOAL**: I am passionate about using data from different sources –including social media, GIS and satellite imagery– to understand and tackle complex public policy issues.", 
+     "**PROFILE**: I am an economist by training with demonstrated expertise designing and implementing diagnostic tools, advanced analytics and data visualizations applied to economic development. Most of my research revolves around different policies improving universal access to basic infrastructure services (housing, water and sanitation, energy, education and health). \n\n**GOAL**: I look for opportunities to use my skills in the field of financial and economic journalism."]
 
 # aboutme: |-
 #   **PROFILE**: Accomplished policy advisor with a strong background in statistics and econometrics applied to economic development. In over 15 years of experience, in Italy and abroad, I have evaluated the feasibility and impact of policies and financial instruments promoting inclusive and sustainable access to infrastructure services (housing, mobility, water and sanitation, energy, education and health).  

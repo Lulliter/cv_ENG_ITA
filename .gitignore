@@ -12,7 +12,8 @@ renv/
 data/*
 foto/*
 zzz_extra/*
-
+temp_RES/*
+!temp_RES/knit_w_param.R
 .vscode/
  
  

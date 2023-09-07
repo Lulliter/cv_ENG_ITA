@@ -19,7 +19,7 @@ I have 4 versions:
 -   ✅ A major "gotcha" 🤯 was the possibility to insert Publications & Talks exploiting my **Zotero** collections in the `....bib` format that can be entered directly via the function `vitae::bibliography_entries`.
     -   (\*) when exporting from Zotero better to select BetterBibLaTeX
 -   ✅ Most other information is saved in `./data/*.csv`which get loaded via `data/cv_data_ENG_ITA.R`, except for Competences (Personal, Software, Language) which are defined in `*.Rmd` files
-    -    ⚠️ see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare (
+    -   ⚠️ see notes in the `.Rmd` files on how to deal with `csv -> latex` formatting nightmare (
     -   ☑️ fixing `.*csv` files directly from Excel or R will have different implications on `""` rendering via latex
 -   ❓ the language tables (copied from [Lorena Abad](https://github.com/loreabad6/R-CV)) use `knitr::kable()` with `latex_options`... this implicated downloading of LaTeX packages (`float`, `xcolor`, `colortbl`?)...which have been giving issues with compiling
 -   ✅ The best way to deal with "ANONIMIZATION" (i.e. Eutalia) is directly on `PDFreader` by redacting the PDF
