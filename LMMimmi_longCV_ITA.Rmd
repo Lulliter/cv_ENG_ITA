@@ -33,6 +33,7 @@ header-includes:        # from Lore Abad
   # \arrayrulecolor{white}
 editor_options: 
   chunk_output_type: console
+language: it  
 ---
 
 
@@ -478,8 +479,8 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 ---------------------------
 
 <!-- \faIcon{file-signature} -->
-```{r BLOGzotero}
-# # from Synched Lula-MyPublications-Narrow.bib (in Zotero)
+```{r BLOGzotero, eval=FALSE, include=FALSE}
+## --- from Synched Lula-MyPublications-Narrow.bib (in Zotero)
 # author, title, type, issued, journal
  
 #print<-  
@@ -498,7 +499,22 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 # "webpage" "webpage" "report" "webpage" "webpage" "article-journal" "report"         
 #  [8] "report"          "report"          "article-journal" "report"          "webpage"     
 ```
+<!-- ## --- A Mano xche se no e' in Inglese  -->
+<!-- Emanuele Cusa, Giampaolo Ioriatti, Daniele Manelli, Luisa M. Mimmi e Andrea Zatti (2024, aprile). IDEE PER PAVIA: UNA SCRITTURA COLLETTIVA PER IL BENE COMUNE. Documento preparato per conto della Scuola di Cittadinanza e Partecipazione, Servizio per la Pastorale Sociale, Diocesi di Pavia. Sito web; [https://ideeperpavia.com/](https://ideeperpavia.com/)   -->
 
+<!-- Mimmi, L. M. (2023, settembre). NATALITÀ, FAMIGLIA E FISCO: SPUNTI DA UN INCONTRO AL MEETING DI RIMINI 2023. Contributo per Il Ticino. Accessibile da: [https://lulliter.github.io/rassegna/posts/2023-09-18-natalita-e-fisco/](https://lulliter.github.io/rassegna/posts/2023-09-18-natalita-e-fisco/)   -->
+
+<!-- Mimmi, L. M. (2022, aprile). SENZA VERITÀ NON C’È RICONCILIAZIONE: UN RACCONTO DAL NEW YORK ENCOUNTER 2022. Contributo per Il Ticino. Accessibile da: [https://lulliter.github.io/rassegna/posts/2022-04-01-senza-verita/](https://lulliter.github.io/rassegna/posts/2022-04-01-senza-verita/)   -->
+
+<!-- Mimmi, L. M. (2021, settembre). INFRASTRUCTURE MAINTENANCE: AMONG G20 TOP PRIORITIES. Accessibile da: [https://blogs.worldbank.org/ppps/infrastructure-maintenance-among-g20-top-priorities](https://blogs.worldbank.org/ppps/infrastructure-maintenance-among-g20-top-priorities)   -->
+
+<!-- Mimmi, L. M., & Machado, F. (2019, gennaio). TECHNOLOGICAL DISRUPTION: A LOOK INTO THE FUTURE INNOVATION IN WATER AND SANITATION. Accessibile da: [https://blogs.iadb.org/agua/en/technological-disruption-a-look-into-the-future-innovation-in-water-and-sanitation/](https://blogs.iadb.org/agua/en/technological-disruption-a-look-into-the-future-innovation-in-water-and-sanitation/)   -->
+
+<!-- Mimmi, L. M., Borja‐Vega, C., & Patel, A. (2017, novembre). PREDICTING SLUM DWELLERS’ DEPRIVATIONS FROM SPACE: A PILOT STUDY ON DHAKA. Accessibile da: [https://blogs.worldbank.org/en/water/predicting-slum-dwellers-deprivations-space-pilot-study-dhaka](https://blogs.worldbank.org/en/water/predicting-slum-dwellers-deprivations-space-pilot-study-dhaka)   -->
+
+<!-- Mimmi, L. M. (2016, novembre). OPEN SPATIAL DATA FOR RESILIENCE IN TANZANIA: LESSONS LEARNED FROM “DAR RAMANI HURIA.”. Accessibile da: [https://lulliter.github.io/rassegna/posts/2016-11-15-ramani-huria/](https://lulliter.github.io/rassegna/posts/2016-11-15-ramani-huria/)   -->
+
+<!-- Mimmi, L. M. (2009, febbraio). SUSSIDIARIETÀ E SVILUPPO: L’ELETTRICITÀ NELLE FAVELAS DELL’AMERICA LATINA. Accessibile da: [https://lulliter.github.io/rassegna/posts/2009-02-21-sussidiar/](https://lulliter.github.io/rassegna/posts/2009-02-21-sussidiar/) -->
 
 ```{r copyTOCVDIR, message=FALSE, warning=FALSE, include=FALSE}
 # here::here()
@@ -533,7 +549,8 @@ vitae::bibliography_entries(file = here::here("data", "Lula-MyPublication-Narrow
 ===========================
   <!-- \faIcon*{calendar} Talks  -->
 ```{r TALKzotero}
-# # from Synched Lula-MyTalks.bib (in Zotero)
+## ---  from Synched Lula-MyTalks.bib (in Zotero)
+
 # author, title, type, issued, journal
 vitae::bibliography_entries(file = here::here("data", "Lula-MyTalks.bib")
                             # ,sorting="ydnt"

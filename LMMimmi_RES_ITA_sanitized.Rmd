@@ -17,12 +17,12 @@ params:
     label: cv_code
     value: pol
     input: select
-    choices: ["data_banche","pol","europrog","data_infra"]  
+    choices: ["econ_svil","data_banche","pol","europrog","data_infra"]  
   position:
     label: position
     value: Policy & Data Analyst
     input: select
-    choices: ["Policy & Business Intelligence Analyst","Economia e Valutazione di Politiche Pubbliche","Politiche Pubbliche ed Europrogettazione", "Policy & Data Analyst"]
+    choices: ["Economia dello Sviluppo e Valutazione di Politiche Pubbliche","Policy & Business Intelligence Analyst","Economia e Valutazione di Politiche Pubbliche","Politiche Pubbliche ed Europrogettazione", "Policy & Data Analyst"]
   aboutme:
       label: Short Bio
       value: |-
@@ -30,8 +30,9 @@ params:
         **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese.
       input: select
       choices: ["**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su programmi di sviluppo e strumenti finanziari mirati a promuovere l’accesso equo e sostenibile a servizi pubblici e infrastrutture (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese.",
+      "**PROFILO**: Esperta nell'ideazione e implementazione di strumenti diagnostici, analisi avanzate e visualizzazioni di dati applicati allo sviluppo economico. Ho condotto studi empirici su programmi di sviluppo e strumenti finanziari mirati a promuovere l’accesso equo e sostenibile a servizi pubblici e infrastrutture (acqua, energia, mobilità, istruzione e salute).  <br><br> **OBIETTIVI**: Continuare ad ampliare le mie conoscenze di metodi e techniche di data science applicati all'analisi del rischio e allo sviluppo di soluzioni efficaci di prodotto, processo e servizio per istituzioni e imprese.",
       
-      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza e banche multilaterali di sviluppo: conduzione di studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  <br><br> **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile in ambito nazionale e/o Europeo.",
+      "**PROFILO**: Economista dello sviluppo con Master in Politiche Pubbliche alla Georgetown University e solida formazione in econometria e statistica. Esperienza professionale di oltre 15 anni presso società di consulenza, enti governativi e banche multilaterali di sviluppo: conduzione di studi diagnostici e congiunturali, monitoraggio e valutazione di impatto per progetti di sviluppo economico.  <br><br> **OBIETTIVO**: Applicare le mie competenze analitiche e di _project management_ nell'ambito della valutazione e implementazione di politiche per lo sviluppo sostenibile.",
 
             "**PROFILO**: Economista con solida formazione nell'analisi statistica ed econometrica applicata allo sviluppo economico. In oltre 15 anni di esperienza, in Italia e all'estero, ho valutato fattibilità e impatto di politiche e strumenti finanziari per l'accesso inclusivo e sostenibile ai servizi infrastrutturali (abitazione, mobilità, energia, acqua e servizi igienico-sanitari, istruzione e salute). <br><br> **OBIETTIVI**: Applicare le mie competenze analitiche e di _project management_ all'implementazione e monitoraggio dei fondi strutturali e di investimento in ambito nazionale/UE (PNRR, Fondi SIE e politica di coesione UE, ecc.).",  
             
